@@ -10,9 +10,9 @@ export function Philosophy() {
   const items = t.philosophy.items[locale]
 
   return (
-    <section className="px-6 py-28 lg:py-36 bg-card">
+    <section className="px-6 py-28 lg:py-36 bg-muted">
       <div className="mx-auto max-w-6xl">
-        <p className="font-mono text-xs tracking-widest text-accent uppercase mb-4">
+        <p className="font-mono text-xs tracking-widest text-primary uppercase mb-4">
           {t.philosophy.label[locale]}
         </p>
         <h2 className="text-3xl font-bold tracking-tight text-card-foreground sm:text-4xl">
@@ -24,7 +24,7 @@ export function Philosophy() {
             const Icon = icons[idx]
             return (
               <div key={principle.title} className="flex gap-5">
-                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center bg-secondary text-accent">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center bg-secondary text-primary">
                   <Icon size={20} />
                 </div>
                 <div>

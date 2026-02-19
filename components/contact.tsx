@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Send, Github, Linkedin, Twitter } from "lucide-react"
-import { useI18n } from "@/lib/i18n"
+import { useState } from "react";
+import { Send, Github, Linkedin, Twitter } from "lucide-react";
+import { useI18n } from "@/lib/i18n";
 
 export function Contact() {
-  const [submitted, setSubmitted] = useState(false)
-  const { locale, t } = useI18n()
+  const [submitted, setSubmitted] = useState(false);
+  const { locale, t } = useI18n();
 
   return (
     <section id="contact" className="px-6 py-28 lg:py-36">
       <div className="mx-auto max-w-6xl">
-        <p className="font-mono text-xs tracking-widest text-accent uppercase mb-4">
+        <p className="font-mono text-xs tracking-widest text-primary uppercase mb-4">
           {t.contact.label[locale]}
         </p>
         <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
@@ -25,7 +25,7 @@ export function Contact() {
           {/* Form */}
           <div>
             {submitted ? (
-              <div className="border border-accent/30 bg-accent/5 p-8">
+              <div className="border border-primary/30 bg-primary/5 p-8">
                 <p className="text-lg font-semibold text-foreground">
                   {t.contact.sentTitle[locale]}
                 </p>
@@ -36,8 +36,8 @@ export function Contact() {
             ) : (
               <form
                 onSubmit={(e) => {
-                  e.preventDefault()
-                  setSubmitted(true)
+                  e.preventDefault();
+                  setSubmitted(true);
                 }}
                 className="flex flex-col gap-5"
               >
@@ -52,7 +52,7 @@ export function Contact() {
                     id="name"
                     type="text"
                     required
-                    className="w-full border border-border bg-transparent px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-accent transition-colors"
+                    className="w-full border border-border bg-transparent px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary transition-colors"
                     placeholder={t.contact.namePlaceholder[locale]}
                   />
                 </div>
@@ -67,7 +67,7 @@ export function Contact() {
                     id="email"
                     type="email"
                     required
-                    className="w-full border border-border bg-transparent px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-accent transition-colors"
+                    className="w-full border border-border bg-transparent px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary transition-colors"
                     placeholder={t.contact.emailPlaceholder[locale]}
                   />
                 </div>
@@ -82,7 +82,7 @@ export function Contact() {
                     id="message"
                     required
                     rows={5}
-                    className="w-full border border-border bg-transparent px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-accent transition-colors resize-none"
+                    className="w-full border border-border bg-transparent px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary transition-colors resize-none"
                     placeholder={t.contact.messagePlaceholder[locale]}
                   />
                 </div>
@@ -105,9 +105,9 @@ export function Contact() {
               </h3>
               <a
                 href="mailto:hello@alexmorgan.dev"
-                className="text-foreground hover:text-accent transition-colors"
+                className="text-foreground hover:text-primary transition-colors"
               >
-                hello@alexmorgan.dev
+                lautarofullone@gmail.com
               </a>
             </div>
 
@@ -119,21 +119,21 @@ export function Contact() {
                 <a
                   href="#"
                   aria-label="GitHub"
-                  className="flex h-10 w-10 items-center justify-center border border-border text-muted-foreground transition-all hover:border-accent/50 hover:text-accent"
+                  className="flex h-10 w-10 items-center justify-center border border-border text-muted-foreground transition-all hover:border-primary/50 hover:text-primary"
                 >
                   <Github size={18} />
                 </a>
                 <a
                   href="#"
                   aria-label="LinkedIn"
-                  className="flex h-10 w-10 items-center justify-center border border-border text-muted-foreground transition-all hover:border-accent/50 hover:text-accent"
+                  className="flex h-10 w-10 items-center justify-center border border-border text-muted-foreground transition-all hover:border-primary/50 hover:text-primary"
                 >
                   <Linkedin size={18} />
                 </a>
                 <a
                   href="#"
                   aria-label="X"
-                  className="flex h-10 w-10 items-center justify-center border border-border text-muted-foreground transition-all hover:border-accent/50 hover:text-accent"
+                  className="flex h-10 w-10 items-center justify-center border border-border text-muted-foreground transition-all hover:border-primary/50 hover:text-primary"
                 >
                   <Twitter size={18} />
                 </a>
@@ -155,5 +155,5 @@ export function Contact() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,31 +1,24 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { ArrowUpRight } from "lucide-react"
-import { useI18n } from "@/lib/i18n"
-
-const projectImages = [
-  "/images/project-cloudsync.jpg",
-  "/images/project-formforge.jpg",
-  "/images/project-paytrack.jpg",
-  "/images/project-devpulse.jpg",
-]
+import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
+import { useI18n } from "@/lib/i18n";
 
 const projectTags = [
   ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Tailwind"],
   ["React", "Node.js", "Redis", "GraphQL"],
   ["Node.js", "PostgreSQL", "Docker", "AWS"],
   ["Next.js", "TypeScript", "Prisma", "Chart.js"],
-]
+];
 
 export function Projects() {
-  const { locale, t } = useI18n()
-  const items = t.projects.items[locale]
+  const { locale, t } = useI18n();
+  const items = t.projects.items[locale];
 
   return (
     <section id="projects" className="px-6 py-28 lg:py-36">
       <div className="mx-auto max-w-6xl">
-        <p className="font-mono text-xs tracking-widest text-accent uppercase mb-4">
+        <p className="font-mono text-xs tracking-widest text-primary uppercase mb-4">
           {t.projects.label[locale]}
         </p>
         <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -37,11 +30,11 @@ export function Projects() {
 
         <div className="mt-16 grid gap-6">
           {/* Featured project — image left, text right */}
-          <article className="group border border-border bg-card overflow-hidden transition-all duration-300 hover:border-accent/50">
+          <article className="group border border-border bg-card overflow-hidden transition-all duration-300 hover:border-primary/50">
             <div className="flex flex-col lg:flex-row">
               <div className="relative w-full lg:w-1/2 aspect-[16/10] lg:aspect-auto lg:min-h-[360px] overflow-hidden">
                 <Image
-                  src={projectImages[0]}
+                  src="image-placeholder.svg"
                   alt={items[0].title}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -51,7 +44,7 @@ export function Projects() {
               </div>
 
               <div className="flex flex-1 flex-col justify-center p-8 lg:p-12">
-                <span className="font-mono text-xs text-accent tracking-wider uppercase">
+                <span className="font-mono text-xs text-primary tracking-wider uppercase">
                   {t.projects.featured[locale]}
                 </span>
                 <div className="mt-3 flex items-start justify-between gap-4">
@@ -60,7 +53,7 @@ export function Projects() {
                   </h3>
                   <ArrowUpRight
                     size={24}
-                    className="flex-shrink-0 text-muted-foreground transition-all duration-300 group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    className="flex-shrink-0 text-muted-foreground transition-all duration-300 group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                   />
                 </div>
                 <p className="mt-4 text-muted-foreground leading-relaxed">
@@ -85,11 +78,11 @@ export function Projects() {
             {items.slice(1).map((project, idx) => (
               <article
                 key={project.title}
-                className="group border border-border bg-card overflow-hidden transition-all duration-300 hover:border-accent/50 flex flex-col"
+                className="group border border-border bg-card overflow-hidden transition-all duration-300 hover:border-primary/50 flex flex-col"
               >
                 <div className="relative w-full aspect-[16/10] overflow-hidden">
                   <Image
-                    src={projectImages[idx + 1]}
+                    src="image-placeholder.svg"
                     alt={project.title}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -105,7 +98,7 @@ export function Projects() {
                     </h3>
                     <ArrowUpRight
                       size={18}
-                      className="flex-shrink-0 text-muted-foreground transition-all duration-300 group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      className="flex-shrink-0 text-muted-foreground transition-all duration-300 group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                     />
                   </div>
                   <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
@@ -128,5 +121,5 @@ export function Projects() {
         </div>
       </div>
     </section>
-  )
+  );
 }

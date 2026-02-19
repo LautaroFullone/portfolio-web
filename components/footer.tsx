@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { useI18n } from "@/lib/i18n"
+import { useI18n } from "@/lib/i18n";
 
 export function Footer() {
-  const { locale, t } = useI18n()
+  const { locale, t } = useI18n();
 
   return (
     <footer className="border-t border-border px-6 py-8">
@@ -11,10 +11,7 @@ export function Footer() {
         <p className="font-mono text-xs text-muted-foreground">
           {t.footer.rights[locale]}
         </p>
-        <p className="font-mono text-xs text-muted-foreground/50">
-          {t.footer.builtWith[locale]}
-        </p>
       </div>
     </footer>
-  )
+  );
 }

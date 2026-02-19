@@ -1,8 +1,14 @@
-"use client"
+"use client";
 
-import { createContext, useContext, useState, useCallback, type ReactNode } from "react"
+import {
+  createContext,
+  useContext,
+  useState,
+  useCallback,
+  type ReactNode,
+} from "react";
 
-export type Locale = "es" | "en"
+export type Locale = "es" | "en";
 
 const dictionary = {
   nav: {
@@ -33,7 +39,10 @@ const dictionary = {
   approach: {
     label: { es: "Enfoque", en: "Approach" },
     title: { es: "Dos Mundos, Una Mentalidad", en: "Two Worlds, One Mindset" },
-    corporateTitle: { es: "Ingeniería Corporativa", en: "Corporate Engineering" },
+    corporateTitle: {
+      es: "Ingeniería Corporativa",
+      en: "Corporate Engineering",
+    },
     corporateDescription: {
       es: "Años de experiencia trabajando en equipos grandes, cumpliendo estándares de nivel empresarial, construyendo para escalabilidad y entregando funcionalidades complejas a través de pipelines robustos de CI/CD. Familiarizado con revisiones de código, decisiones de arquitectura y colaboración entre equipos a gran escala.",
       en: "Years of experience working within large teams, adhering to enterprise-level standards, building for scalability, and shipping complex features through robust CI/CD pipelines. Familiar with code reviews, architecture decisions, and cross-team collaboration at scale.",
@@ -52,7 +61,10 @@ const dictionary = {
         "Robust CI/CD & testing pipelines",
       ],
     },
-    independentTitle: { es: "Productos Independientes", en: "Independent Products" },
+    independentTitle: {
+      es: "Productos Independientes",
+      en: "Independent Products",
+    },
     independentDescription: {
       es: "Apasionado por construir productos de cero a uno. Asumiendo la responsabilidad completa del stack, desde la arquitectura del sistema hasta el despliegue y la experiencia de usuario. Tratando cada proyecto personal con el mismo rigor que el software de producción.",
       en: "Passionate about building products from zero to one. Owning the full stack, from system architecture to deployment and user experience. Treating every side project with the same rigor as production-level software.",
@@ -95,46 +107,46 @@ const dictionary = {
     items: {
       es: [
         {
-          title: "CloudSync Dashboard",
+          title: "Silk",
           description:
-            "Plataforma de analíticas en tiempo real para monitorear la salud, costos y métricas de rendimiento de infraestructura en la nube a través de múltiples proveedores.",
+            "Plataforma SPA para marca personal de estilismo y asesoría de imagen. Incluye venta de productos digitales y servicios, panel de administración, gestión de contenido (blog con editor enriquecido), integración de pagos y captación estratégica de leads.",
         },
         {
-          title: "FormForge",
+          title: "Aquazul",
           description:
-            "Constructor de formularios de código abierto con interfaz drag-and-drop, lógica condicional e integraciones con webhooks. Usado por más de 2k desarrolladores.",
+            "Sistema de gestión para lavandería industrial con múltiples roles (Admin, Operario y Cliente). Permite administración de artículos y precios personalizados por cliente, generación de pedidos, remitos, control de reclamos y visualización de estadísticas.",
         },
         {
-          title: "PayTrack API",
+          title: "Asociación de Pádel",
           description:
-            "Servicio de conciliación de pagos que procesa más de 50k transacciones diarias con matching automático y detección de anomalías.",
+            "Sitio web institucional y sistema de gestión para torneos y reservas. Enfocado en digitalizar la organización de canchas, jugadores y eventos, mejorando la experiencia administrativa y operativa.",
         },
         {
-          title: "DevPulse",
+          title: "Full Court",
           description:
-            "Herramienta de productividad para desarrolladores que rastrea patrones de commits, ciclos de revisión de código y velocidad del equipo con insights accionables.",
+            "Aplicación para gestión de canchas deportivas con control de reservas, clientes y consumos. Arquitectura fullstack con React, Node.js y Prisma, diseñada con enfoque escalable y buenas prácticas de producto.",
         },
       ],
       en: [
         {
-          title: "CloudSync Dashboard",
+          title: "Silk",
           description:
-            "Real-time analytics platform for monitoring cloud infrastructure health, costs and performance metrics across multiple providers.",
+            "E-commerce y plataforma de captación para marca personal. Arquitectura fullstack orientada a escalabilidad, con panel administrativo, gestión dinámica de contenido, venta de productos digitales y automatización de procesos comerciales.",
         },
         {
-          title: "FormForge",
+          title: "Aquazul",
           description:
-            "Open-source form builder with drag-and-drop interface, conditional logic, and webhook integrations. Used by 2k+ developers.",
+            "Sistema integral para operación de lavandería industrial con lógica de negocio compleja: múltiples roles, precios personalizados por cliente, trazabilidad de pedidos y generación de documentación operativa.",
         },
         {
-          title: "PayTrack API",
+          title: "Asociación de Pádel",
           description:
-            "Payment reconciliation service processing 50k+ daily transactions with automated matching and anomaly detection.",
+            "Plataforma web institucional con funcionalidades de gestión deportiva. Digitaliza la administración de torneos, reservas y organización de jugadores.",
         },
         {
-          title: "DevPulse",
+          title: "Full Court",
           description:
-            "Developer productivity tool that tracks commit patterns, code review cycles and team velocity with actionable insights.",
+            "Aplicación de gestión de reservas deportivas con arquitectura modular y escalable. Incluye control de clientes, consumos y validaciones robustas en frontend y backend.",
         },
       ],
     },
@@ -145,36 +157,36 @@ const dictionary = {
     items: {
       es: [
         {
-          period: "2022 \u2014 Presente",
-          role: "Ingeniero Fullstack Senior",
-          company: "NovaTech Solutions",
+          period: "2026 \u2014 Presente",
+          role: "Líder Técnico Frontend",
+          company: "Accenture - Client: Banco Galicia",
           description:
             "Liderando la arquitectura frontend de la plataforma principal. Introduje un sistema de diseño que redujo el tiempo de desarrollo un 35%. Mentoreando un equipo de 5 ingenieros.",
-          impact: "35% ciclos más rápidos",
+          impact: "Aca podria ir el impacto principal",
         },
         {
-          period: "2020 \u2014 2022",
-          role: "Desarrollador Fullstack",
-          company: "DataBridge Corp",
-          description:
-            "Construí herramientas internas para la gestión de pipelines de datos que sirven a más de 200 analistas. Migré servicios legacy de PHP a un stack moderno de Node.js/React.",
-          impact: "200+ usuarios internos",
-        },
-        {
-          period: "2018 \u2014 2020",
+          period: "2024 \u2014 2025",
           role: "Desarrollador Frontend",
-          company: "PixelCraft Agency",
+          company: "Accenture - Client: Banco Galicia",
+          description:
+            "Liderando la arquitectura frontend de la plataforma principal. Introduje un sistema de diseño que redujo el tiempo de desarrollo un 35%. Mentoreando un equipo de 5 ingenieros.",
+          impact: "Aca podria ir el impacto principal",
+        },
+        {
+          period: "2021 \u2014 2022",
+          role: "Desarrollador Salesforce",
+          company: "Accenture - Proyecto Manage my Sales",
           description:
             "Entregué más de 20 proyectos para clientes en salud, fintech y e-commerce. Establecí una librería de componentes y estándares de testing para el equipo.",
-          impact: "20+ proyectos entregados",
+          impact: "Aca podria ir el impacto principal",
         },
         {
-          period: "2017 \u2014 2018",
+          period: "2020 \u2014 2021",
           role: "Desarrollador Junior",
-          company: "StartupLab",
+          company: "Tember",
           description:
             "Primera contratación de ingeniería. Construí el MVP que aseguró la ronda semilla. Asumí múltiples roles entre frontend, backend y DevOps.",
-          impact: "Ronda semilla obtenida",
+          impact: "Aca podria ir el impacto principal",
         },
       ],
       en: [
@@ -288,7 +300,10 @@ const dictionary = {
     emailTitle: { es: "Email", en: "Email" },
     socialTitle: { es: "Redes", en: "Social" },
     locationTitle: { es: "Ubicación", en: "Location" },
-    locationLine1: { es: "Basado en Berlín, Alemania", en: "Based in Berlin, Germany" },
+    locationLine1: {
+      es: "Basado en Mar del Plata, Argentina",
+      en: "Based in Mar del Plata, Argentina",
+    },
     locationLine2: {
       es: "Abierto a oportunidades remotas a nivel mundial",
       en: "Open to remote opportunities worldwide",
@@ -299,39 +314,35 @@ const dictionary = {
       es: "\u00A9 2026 Lautaro Fullone. Todos los derechos reservados.",
       en: "\u00A9 2026 Lautaro Fullone. All rights reserved.",
     },
-    builtWith: {
-      es: "Diseñado y construido con Next.js y Tailwind CSS",
-      en: "Designed & built with Next.js and Tailwind CSS",
-    },
   },
-} as const
+} as const;
 
-type Dictionary = typeof dictionary
+type Dictionary = typeof dictionary;
 
 interface I18nContextType {
-  locale: Locale
-  toggleLocale: () => void
-  t: Dictionary
+  locale: Locale;
+  toggleLocale: () => void;
+  t: Dictionary;
 }
 
-const I18nContext = createContext<I18nContextType | null>(null)
+const I18nContext = createContext<I18nContextType | null>(null);
 
 export function I18nProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocale] = useState<Locale>("es")
+  const [locale, setLocale] = useState<Locale>("es");
 
   const toggleLocale = useCallback(() => {
-    setLocale((prev) => (prev === "es" ? "en" : "es"))
-  }, [])
+    setLocale((prev) => (prev === "es" ? "en" : "es"));
+  }, []);
 
   return (
     <I18nContext.Provider value={{ locale, toggleLocale, t: dictionary }}>
       {children}
     </I18nContext.Provider>
-  )
+  );
 }
 
 export function useI18n() {
-  const context = useContext(I18nContext)
-  if (!context) throw new Error("useI18n must be used within I18nProvider")
-  return context
+  const context = useContext(I18nContext);
+  if (!context) throw new Error("useI18n must be used within I18nProvider");
+  return context;
 }

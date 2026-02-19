@@ -7,7 +7,7 @@ export function Hero() {
   const { locale, t } = useI18n()
 
   return (
-    <section className="relative flex min-h-screen flex-col items-start justify-center px-6">
+    <section className="bg-accent relative flex min-h-screen flex-col items-start justify-center px-6">
       <div className="mx-auto w-full max-w-6xl">
         <div className="flex items-center gap-2 mb-8">
           <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
@@ -20,7 +20,7 @@ export function Hero() {
           Lautaro Fullone
         </h1>
 
-        <p className="mt-4 text-xl font-medium text-accent sm:text-2xl">
+        <p className="mt-4 text-xl font-medium text-primary sm:text-2xl">
           {t.hero.role[locale]}
         </p>
 

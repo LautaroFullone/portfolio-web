@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { Menu, X, Globe } from "lucide-react"
 import { useI18n } from "@/lib/i18n"
+import { ThemeSwitcher } from "@/components/theme-switcher"
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -34,7 +35,7 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a
           href="#"
-          className="font-mono text-sm tracking-wider text-foreground hover:text-accent transition-colors"
+          className="font-mono text-sm tracking-wider text-foreground hover:text-primary transition-colors"
         >
           {"dev.portfolio"}
         </a>
@@ -54,27 +55,31 @@ export function Navbar() {
             ))}
           </ul>
 
-          {/* Language toggle */}
-          <button
-            onClick={toggleLocale}
-            className="flex items-center gap-1.5 text-xs font-mono text-muted-foreground hover:text-foreground transition-colors border border-border px-3 py-1.5 hover:border-accent/50"
-            aria-label={locale === "es" ? "Switch to English" : "Cambiar a Español"}
-          >
-            <Globe size={14} />
-            <span>{locale === "es" ? "EN" : "ES"}</span>
-          </button>
+          {/* Controls */}
+          <div className="flex items-center gap-2">
+            <button
+              onClick={toggleLocale}
+              className="flex items-center gap-1.5 text-xs font-mono text-muted-foreground hover:text-foreground transition-colors border border-border px-3 py-1.5 hover:border-primary/50"
+              aria-label={locale === "es" ? "Switch to English" : "Cambiar a Español"}
+            >
+              <Globe size={14} />
+              <span>{locale === "es" ? "EN" : "ES"}</span>
+            </button>
+            <ThemeSwitcher />
+          </div>
         </div>
 
         {/* Mobile controls */}
-        <div className="flex md:hidden items-center gap-3">
+        <div className="flex md:hidden items-center gap-2">
           <button
             onClick={toggleLocale}
-            className="flex items-center gap-1.5 text-xs font-mono text-muted-foreground hover:text-foreground transition-colors border border-border px-2.5 py-1.5 hover:border-accent/50"
+            className="flex items-center gap-1.5 text-xs font-mono text-muted-foreground hover:text-foreground transition-colors border border-border px-2.5 py-1.5 hover:border-primary/50"
             aria-label={locale === "es" ? "Switch to English" : "Cambiar a Español"}
           >
             <Globe size={14} />
             <span>{locale === "es" ? "EN" : "ES"}</span>
           </button>
+          <ThemeSwitcher />
           <button
             className="text-foreground"
             onClick={() => setMobileOpen(!mobileOpen)}

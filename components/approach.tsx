@@ -9,7 +9,7 @@ export function Approach() {
   return (
     <section id="approach" className="px-6 py-28 lg:py-36">
       <div className="mx-auto max-w-6xl">
-        <p className="font-mono text-xs tracking-widest text-accent uppercase mb-4">
+        <p className="font-mono text-xs tracking-widest text-primary uppercase mb-4">
           {t.approach.label[locale]}
         </p>
         <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
@@ -36,7 +36,7 @@ export function Approach() {
                   key={item}
                   className="flex items-start gap-3 text-sm text-muted-foreground"
                 >
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 bg-accent" />
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 bg-primary" />
                   {item}
                 </li>
               ))}
@@ -62,7 +62,7 @@ export function Approach() {
                   key={item}
                   className="flex items-start gap-3 text-sm text-muted-foreground"
                 >
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 bg-accent" />
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 bg-primary" />
                   {item}
                 </li>
               ))}
