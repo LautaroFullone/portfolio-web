@@ -7,6 +7,7 @@ import Image from 'next/image'
 
 export function Hero() {
    const { locale, t } = useI18n()
+   const userWindowWidth = window.innerWidth
 
    return (
       <section className="bg-accent relative flex min-h-screen w-full flex-col items-center justify-center px-4 pt-24 pb-20 overflow-hidden">
@@ -26,7 +27,7 @@ export function Hero() {
                   showCursor
                   typingSpeed={150}
                   pauseDuration={8000}
-                  cursorCharacter="|"
+                  cursorCharacter=""
                   cursorClassName="font-normal"
                   deletingSpeed={50}
                   cursorBlinkDuration={0.6}
@@ -42,6 +43,7 @@ export function Hero() {
                   style={{ animationDelay: '0.2s' }}
                >
                   {t.hero.subtitle[locale]}
+                  {''} {userWindowWidth}
                </p>
 
                <div className="mt-10 flex flex-wrap items-center gap-4">
