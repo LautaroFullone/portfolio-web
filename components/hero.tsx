@@ -13,11 +13,11 @@ export function Hero() {
             {/* Text Content */}
             <div className="flex flex-col items-start z-10 w-full lg:col-span-8">
                {/* <div className="flex items-center gap-2 mb-8">
-          <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-          <span className="font-mono text-xs text-muted-foreground tracking-wider uppercase">
-            {t.hero.available[locale]}
-          </span>
-        </div> */}
+                  <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+                  <span className="font-mono text-xs text-muted-foreground tracking-wider uppercase">
+                     {t.hero.available[locale]}
+                  </span>
+               </div> */}
 
                <h1 className="text-5xl font-bold tracking-tight text-foreground sm:text-7xl lg:text-8xl text-balance">
                   Lautaro Fullone
@@ -72,7 +72,7 @@ export function Hero() {
                {/* Glow effect behind the image for a more premium look */}
                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/20 blur-[100px] rounded-full pointer-events-none" />
 
-               <div className="relative w-56 h-56 sm:w-80 sm:h-80 lg:w-[440px] lg:h-[440px] animate-float">
+               <div className="relative w-56 h-56 sm:w-80 sm:h-80 lg:w-[440px] lg:h-[440px]">
                   <Image
                      src="/dev-saludando.png"
                      alt="Lautaro saludando"
