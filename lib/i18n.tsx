@@ -31,40 +31,40 @@ const dictionary = {
       },
    },
    approach: {
-      label: { es: 'Enfoque', en: 'Approach' },
-      title: { es: 'Dos Mundos, Una Mentalidad', en: 'Two Worlds, One Mindset' },
+      label: { es: 'Dos Mundos, Una Mentalidad', en: 'Approach' },
+      title: { es: 'Cómo Trabajo', en: 'Two Worlds, One Mindset' },
       corporateTitle: {
-         es: 'Ingeniería Corporativa',
-         en: 'Corporate Engineering',
+         es: 'Trayectoria Corporativa',
+         en: 'Corporate Trajectory',
       },
       corporateDescription: {
-         es: 'Trabajo liderando desarrollos en entornos de alta exigencia y a gran escala, donde la arquitectura sólida, el código limpio y los despliegues robustos no se negocian. No solo escribo código, guío a otros desarrolladores y aseguro el correcto funcionamiento.',
+         es: 'Trabajo liderando desarrollos en entornos de alta exigencia y a gran escala. No solo escribo código; guío equipos para asegurar que cada despliegue sea robusto y escalable.',
+         // es: 'Trabajo liderando desarrollos en entornos de alta exigencia y a gran escala, donde la arquitectura sólida, el código limpio y los despliegues robustos no se negocian. No solo escribo código, guío a otros desarrolladores y aseguro el correcto funcionamiento.',
          en: 'Leading critical systems with solid architecture, clean code, and robust deployments. Not just writing code, guiding other developers, and ensuring the product scales.',
       },
       corporateItems: {
          es: [
-            'Liderazgo técnico',
+            'Liderazgo técnico y mentoría',
             'Colaboración en grandes equipos',
-            'Estándares empresariales',
-            'Pipelines CI/CD y testing',
+            'Integración y despliegue continuo',
          ],
          en: [],
       },
       independentTitle: {
-         es: 'Productos Independientes',
-         en: 'Independent Products',
+         es: 'Proyectos Independientes',
+         en: 'Independent Projects',
       },
       independentDescription: {
          // es: 'Apasionado por construir productos de cero a uno. Asumiendo la responsabilidad completa del stack, desde la arquitectura del sistema hasta el despliegue y la experiencia de usuario. Tratando cada proyecto personal con el mismo rigor que el software de producción.',
-         es: 'Llevo ideas desde el papel hasta el servidor. Me involucro con el negocio y analizo todo su ciclo de vida, diseño la solución, levanto la infraestructura y conecto los servicios necesarios. Trato cada proyecto con la misma seriedad que un software de producción a gran escala.',
+         es: 'Me apasiona llevar ideas desde el papel hasta el servidor. Me involucro en todo el ciclo: diseño, infraestructura y negocio, tratando cada proyecto con el rigor de un producto real.',
+         // es: 'Llevo ideas desde el papel hasta el servidor. Me involucro con el negocio y analizo todo su ciclo de vida, diseño la solución, levanto la infraestructura y conecto los servicios necesarios. Trato cada proyecto con la misma seriedad que un software de producción a gran escala.',
          en: 'Passionate about building products from zero to one. Owning the full stack, from system architecture to deployment and user experience. Treating every side project with the same rigor as production-level software.',
       },
       independentItems: {
          es: [
-            'Responsabilidad total de idea a lanzamiento',
-            'Arquitectura y diseño de sistemas',
-            'Visión de producto y empatía con el usuario',
-            'Iteración rápida y entrega continua',
+            'Visión de producto de punta a punta',
+            'Desarrollo ágil y entregas rápidas',
+            'Foco total en la experiencia del usuario',
          ],
          en: [
             'Full ownership from idea to launch',

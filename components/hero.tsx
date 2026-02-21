@@ -4,10 +4,12 @@ import { ArrowDown, Github, Linkedin } from 'lucide-react'
 import TextType from './ui/react-bits/TextType'
 import { useI18n } from '@/lib/i18n'
 import Image from 'next/image'
+import { useMobile } from '@/hooks/use-mobile'
 
 export function Hero() {
    const { locale, t } = useI18n()
-   const userWindowWidth = window.innerWidth
+   const isMobile = useMobile()
+   const userWindowWidth = window?.innerWidth || '0'
 
    return (
       <section className="bg-accent relative flex min-h-screen w-full flex-col items-center justify-center px-4 pt-24 pb-20 overflow-hidden">
@@ -27,7 +29,7 @@ export function Hero() {
                   showCursor
                   typingSpeed={150}
                   pauseDuration={8000}
-                  cursorCharacter=""
+                  cursorCharacter={isMobile ? '' : '|'}
                   cursorClassName="font-normal"
                   deletingSpeed={50}
                   cursorBlinkDuration={0.6}
