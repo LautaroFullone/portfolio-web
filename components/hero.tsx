@@ -37,7 +37,10 @@ export function Hero() {
                   {t.hero.role[locale]}
                </p>
 
-               <p className="font-mono  mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+               <p
+                  className="font-mono mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg animate-fade-in-up"
+                  style={{ animationDelay: '0.2s' }}
+               >
                   {t.hero.subtitle[locale]}
                </p>
 

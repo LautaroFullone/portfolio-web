@@ -4,6 +4,7 @@ import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 
 import localFont from 'next/font/local'
+import ClickSpark from '@/components/ui/react-bits/ClickSpark'
 
 const workSans = localFont({
    src: '../assets/WorkSans-VariableFont_wght.ttf',
@@ -51,7 +52,15 @@ export default function RootLayout({
                enableSystem
                disableTransitionOnChange
             >
-               {children}
+               <ClickSpark
+                  sparkColor="#d97757"
+                  sparkSize={20}
+                  sparkRadius={15}
+                  sparkCount={10}
+                  duration={400}
+               >
+                  {children}
+               </ClickSpark>
             </ThemeProvider>
             <Analytics />
          </body>

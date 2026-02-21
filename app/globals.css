@@ -1,5 +1,4 @@
 @import 'tailwindcss';
-@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -165,6 +164,8 @@
    --shadow-lg: var(--shadow-lg);
    --shadow-xl: var(--shadow-xl);
    --shadow-2xl: var(--shadow-2xl);
+
+   --animate-fade-in-up: fade-in-up 0.8s ease-out backwards;
 }
 
 @layer base {
@@ -179,5 +180,17 @@
    body {
       @apply bg-background text-foreground;
       letter-spacing: var(--tracking-normal, 0em);
+   }
+}
+
+@keyframes fade-in-up {
+   0% {
+      opacity: 0;
+      transform: translateY(20px);
+   }
+
+   100% {
+      opacity: 1;
+      transform: translateY(0);
    }
 }
