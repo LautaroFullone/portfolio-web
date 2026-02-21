@@ -5,59 +5,51 @@ import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 
 const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
+   subsets: ['latin'],
+   variable: '--font-inter',
 })
 
 const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-jetbrains',
+   subsets: ['latin'],
+   variable: '--font-jetbrains',
 })
 
 export const metadata: Metadata = {
-  title: 'Desarrollador Fullstack | Portfolio',
-  description: 'Desarrollador Fullstack especializado en React, TypeScript, Node.js y tecnologías web modernas. Construyendo aplicaciones corporativas y productos independientes.',
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
-  },
+   title: 'Lautaro Fullone',
+   description:
+      'Desarrollador Fullstack especializado en React, TypeScript, Node.js y tecnologías web modernas. Construyendo aplicaciones corporativas y productos independientes.',
+   icons: {
+      icon: '/dev-icon.png',
+      apple: '/dev-icon.png',
+   },
 }
 
 export const viewport: Viewport = {
-  themeColor: '#1c1917',
+   themeColor: '#1c1917',
 }
 
 export default function RootLayout({
-  children,
+   children,
 }: Readonly<{
-  children: React.ReactNode
+   children: React.ReactNode
 }>) {
-  return (
-    <html lang="es" className={`${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
-      <body className="font-sans antialiased">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
-        <Analytics />
-      </body>
-    </html>
-  )
+   return (
+      <html
+         lang="es"
+         className={`${inter.variable} ${jetbrainsMono.variable}`}
+         suppressHydrationWarning
+      >
+         <body className="font-sans antialiased">
+            <ThemeProvider
+               attribute="class"
+               defaultTheme="dark"
+               enableSystem
+               disableTransitionOnChange
+            >
+               {children}
+            </ThemeProvider>
+            <Analytics />
+         </body>
+      </html>
+   )
 }
