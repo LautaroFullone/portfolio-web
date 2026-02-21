@@ -1,17 +1,22 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 
-const inter = Inter({
-   subsets: ['latin'],
-   variable: '--font-inter',
+import localFont from 'next/font/local'
+
+const workSans = localFont({
+   src: '../assets/WorkSans-VariableFont_wght.ttf',
+   variable: '--font-work-sans',
+   display: 'swap',
 })
 
-const jetbrainsMono = JetBrains_Mono({
-   subsets: ['latin'],
+const jetbrainsMono = localFont({
+   src: '../assets/JetBrainsMono-Medium.woff2',
    variable: '--font-jetbrains',
+   weight: '500',
+   style: 'normal',
+   display: 'swap',
 })
 
 export const metadata: Metadata = {
@@ -36,10 +41,10 @@ export default function RootLayout({
    return (
       <html
          lang="es"
-         className={`${inter.variable} ${jetbrainsMono.variable}`}
+         className={`${workSans.variable} ${jetbrainsMono.variable}`}
          suppressHydrationWarning
       >
-         <body className="font-sans antialiased">
+         <body className="font-mono antialiased">
             <ThemeProvider
                attribute="class"
                defaultTheme="dark"

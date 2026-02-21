@@ -3,6 +3,7 @@
 import { ArrowDown, Github, Linkedin } from 'lucide-react'
 import { useI18n } from '@/lib/i18n'
 import Image from 'next/image'
+import TextType from './ui/react-bits/TextType'
 
 export function Hero() {
    const { locale, t } = useI18n()
@@ -19,15 +20,24 @@ export function Hero() {
                   </span>
                </div> */}
 
-               <h1 className="text-5xl font-bold tracking-tight text-foreground sm:text-7xl lg:text-8xl text-balance">
-                  Lautaro Fullone
-               </h1>
+               <TextType
+                  as={'h1'}
+                  text={'Lautaro Fullone'}
+                  showCursor
+                  typingSpeed={150}
+                  pauseDuration={8000}
+                  cursorCharacter="|"
+                  cursorClassName="font-normal"
+                  deletingSpeed={70}
+                  cursorBlinkDuration={0.6}
+                  className="font-sans text-5xl font-bold tracking-tight text-foreground sm:text-7xl lg:text-8xl text-balance"
+               />
 
                <p className="mt-4 text-xl font-medium text-primary sm:text-2xl">
                   {t.hero.role[locale]}
                </p>
 
-               <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+               <p className="font-mono  mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
                   {t.hero.subtitle[locale]}
                </p>
 

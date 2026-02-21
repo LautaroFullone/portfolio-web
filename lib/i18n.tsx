@@ -15,8 +15,8 @@ const dictionary = {
    hero: {
       role: { es: 'Desarrollador Web', en: 'Web Developer' },
       subtitle: {
-         es: 'Construyo aplicaciones escalables en entornos corporativos y productos digitales independientes, unificando lo mejor de ambos mundos.',
-         en: 'Building scalable applications in corporate environments and crafting independent digital products. Bridging the gap between enterprise standards and startup speed.',
+         es: 'Transformo ideas en productos digitales que funcionan. Disfruto uniendo la solidez del mundo corporativo con la libertad de crear desde cero.',
+         en: 'I turn ideas into functional digital products. I enjoy combining the stability of the corporate world with the freedom of creating from scratch.',
       },
       available: {
          es: 'Disponible para trabajar',
@@ -74,7 +74,7 @@ const dictionary = {
          ],
       },
       quote: {
-         es: '\u201CAplico estándares corporativos y pensamiento de producto a cada proyecto que construyo.\u201D',
+         es: '\u201CProgramar es un desafío constante donde siempre encuentro la forma de divertirme.\u201D',
          en: '\u201CI apply corporate standards and product thinking to every project I build.\u201D',
       },
    },
