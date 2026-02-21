@@ -1,15 +1,15 @@
 'use client'
 
 import { ArrowDown, Github, Linkedin } from 'lucide-react'
+import TextType from './ui/react-bits/TextType'
 import { useI18n } from '@/lib/i18n'
 import Image from 'next/image'
-import TextType from './ui/react-bits/TextType'
 
 export function Hero() {
    const { locale, t } = useI18n()
 
    return (
-      <section className="bg-accent relative flex min-h-screen w-full flex-col items-center justify-center px-6 pt-24 pb-20 overflow-hidden">
+      <section className="bg-accent relative flex min-h-screen w-full flex-col items-center justify-center px-4 pt-24 pb-20 overflow-hidden">
          <div className="mx-auto w-full max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             {/* Text Content */}
             <div className="flex flex-col items-start z-10 w-full lg:col-span-8">
@@ -21,16 +21,16 @@ export function Hero() {
                </div> */}
 
                <TextType
-                  as={'h1'}
-                  text={'Lautaro Fullone'}
+                  as="h1"
+                  text="Lautaro Fullone"
                   showCursor
                   typingSpeed={150}
                   pauseDuration={8000}
                   cursorCharacter="|"
                   cursorClassName="font-normal"
-                  deletingSpeed={70}
+                  deletingSpeed={50}
                   cursorBlinkDuration={0.6}
-                  className="font-sans text-5xl font-bold tracking-tight text-foreground sm:text-7xl lg:text-8xl text-balance"
+                  className="font-sans text-5xl font-bold tracking-tighter sm:tracking-tight text-foreground sm:text-7xl lg:text-8xl text-balance"
                />
 
                <p className="mt-4 text-xl font-medium text-primary sm:text-2xl">
