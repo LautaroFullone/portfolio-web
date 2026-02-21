@@ -9,7 +9,7 @@ import { useMobile } from '@/hooks/use-mobile'
 export function Hero() {
    const { locale, t } = useI18n()
    const isMobile = useMobile()
-   const userWindowWidth = window?.innerWidth || '0'
+   const userWindowWidth = typeof window !== 'undefined' ? window?.innerWidth : '0'
 
    return (
       <section className="bg-accent relative flex min-h-screen w-full flex-col items-center justify-center px-4 pt-24 pb-20 overflow-hidden">
