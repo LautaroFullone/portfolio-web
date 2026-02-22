@@ -8,7 +8,6 @@ import { useMobile } from '@/hooks/use-mobile'
 
 export function Hero() {
    const { locale, t } = useI18n()
-   const isMobile = useMobile()
 
    return (
       <section className="bg-accent relative flex min-h-screen w-full flex-col items-center justify-center px-4 pt-24 pb-20 overflow-hidden">
@@ -30,7 +29,7 @@ export function Hero() {
                   showCursor
                   typingSpeed={150}
                   pauseDuration={8000}
-                  cursorCharacter={isMobile ? '' : '|'}
+                  cursorCharacter="|"
                   cursorClassName="font-normal"
                   deletingSpeed={50}
                   cursorBlinkDuration={0.6}
