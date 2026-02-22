@@ -333,11 +333,8 @@ export function Technologies() {
             <SectionHeader
                label={t.technologies.label[locale]}
                title={t.technologies.title[locale]}
+               description={t.technologies.description[locale]}
             />
-
-            <p className="mt-4 max-w-xl text-muted-foreground leading-relaxed">
-               {t.technologies.description[locale]}
-            </p>
 
             <div className="mt-16 flex flex-col w-screen relative left-1/2 -ml-[50vw] space-y-6">
                <LogoLoop

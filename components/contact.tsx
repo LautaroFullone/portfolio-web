@@ -1,9 +1,9 @@
 'use client'
 
-import { useState } from 'react'
 import { Send, Github, Linkedin, Twitter } from 'lucide-react'
-import { useI18n } from '@/lib/i18n'
 import SectionHeader from './shared/section-header'
+import { useI18n } from '@/lib/i18n'
+import { useState } from 'react'
 
 export function Contact() {
    const [submitted, setSubmitted] = useState(false)
@@ -15,11 +15,8 @@ export function Contact() {
             <SectionHeader
                label={t.contact.label[locale]}
                title={t.contact.title[locale]}
+               description={t.contact.description[locale]}
             />
-
-            <p className="mt-4 max-w-xl text-muted-foreground leading-relaxed">
-               {t.contact.description[locale]}
-            </p>
 
             <div className="mt-16 grid gap-12 lg:grid-cols-2">
                {/* Form */}
@@ -88,7 +85,7 @@ export function Contact() {
                         </div>
                         <button
                            type="submit"
-                           className="inline-flex w-fit items-center gap-2 bg-foreground text-background px-6 py-3 text-sm font-medium transition-colors hover:bg-foreground/90"
+                           className="cursor-pointer inline-flex w-fit items-center gap-2 bg-foreground text-background px-6 py-3 text-sm font-medium transition-colors hover:bg-foreground/90"
                         >
                            {t.contact.sendButton[locale]}
                            <Send size={14} />

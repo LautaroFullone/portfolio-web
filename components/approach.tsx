@@ -34,7 +34,7 @@ export function Approach() {
                         text={t.approach.corporateDescription[locale]}
                         animateOn="both"
                         speed={50}
-                        maxIterations={30}
+                        maxIterations={20}
                         useOriginalCharsOnly
                      />
                   </p>
@@ -50,7 +50,7 @@ export function Approach() {
                               text={item}
                               animateOn="both"
                               speed={100}
-                              maxIterations={30}
+                              maxIterations={25}
                               useOriginalCharsOnly
                            />
                         </li>
@@ -75,7 +75,7 @@ export function Approach() {
                         text={t.approach.independentDescription[locale]}
                         animateOn="both"
                         speed={50}
-                        maxIterations={30}
+                        maxIterations={20}
                         useOriginalCharsOnly
                      />
                   </p>
@@ -91,7 +91,7 @@ export function Approach() {
                               text={item}
                               animateOn="both"
                               speed={100}
-                              maxIterations={30}
+                              maxIterations={25}
                               useOriginalCharsOnly
                            />
                         </li>

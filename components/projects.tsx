@@ -23,11 +23,8 @@ export function Projects() {
             <SectionHeader
                label={t.projects.label[locale]}
                title={t.projects.title[locale]}
+               description={t.projects.description[locale]}
             />
-
-            <p className="mt-4 max-w-xl text-muted-foreground leading-relaxed">
-               {t.projects.description[locale]}
-            </p>
 
             <div className="mt-16 grid gap-6">
                {/* Featured project — image left, text right */}
