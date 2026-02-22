@@ -39,24 +39,32 @@ export function Approach() {
                         {t.approach.corporateTitle[locale]}
                      </h3>
                   </div>
+
                   <p className="text-muted-foreground leading-relaxed">
                      {/* {t.approach.corporateDescription[locale]} */}
                      <DecryptedText
                         text={t.approach.corporateDescription[locale]}
-                        animateOn="view"
-                        speed={80}
-                        maxIterations={15}
+                        animateOn="both"
+                        speed={50}
+                        maxIterations={30}
                         useOriginalCharsOnly
                      />
                   </p>
+
                   <ul className="mt-6 space-y-3">
                      {t.approach.corporateItems[locale].map((item) => (
                         <li
                            key={item}
                            className="flex items-start gap-3 text-sm text-muted-foreground"
                         >
-                           <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 bg-primary" />
-                           {item}
+                           <span className="mt-1.5 h-1.5 w-1.5 shrink-0 bg-primary" />
+                           <DecryptedText
+                              text={item}
+                              animateOn="both"
+                              speed={100}
+                              maxIterations={30}
+                              useOriginalCharsOnly
+                           />
                         </li>
                      ))}
                   </ul>
@@ -72,24 +80,32 @@ export function Approach() {
                         {t.approach.independentTitle[locale]}
                      </h3>
                   </div>
+
                   <p className="text-muted-foreground leading-relaxed">
                      {/* {t.approach.independentDescription[locale]} */}
                      <DecryptedText
                         text={t.approach.independentDescription[locale]}
-                        animateOn="view"
-                        speed={80}
-                        maxIterations={15}
+                        animateOn="both"
+                        speed={50}
+                        maxIterations={30}
                         useOriginalCharsOnly
                      />
                   </p>
+
                   <ul className="mt-6 space-y-3">
                      {t.approach.independentItems[locale].map((item) => (
                         <li
                            key={item}
                            className="flex items-start gap-3 text-sm text-muted-foreground"
                         >
-                           <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 bg-primary" />
-                           {item}
+                           <span className="mt-1.5 h-1.5 w-1.5 shrink-0 bg-primary" />
+                           <DecryptedText
+                              text={item}
+                              animateOn="both"
+                              speed={100}
+                              maxIterations={30}
+                              useOriginalCharsOnly
+                           />
                         </li>
                      ))}
                   </ul>

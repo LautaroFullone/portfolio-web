@@ -9,11 +9,10 @@ import { useMobile } from '@/hooks/use-mobile'
 export function Hero() {
    const { locale, t } = useI18n()
    const isMobile = useMobile()
-   const userWindowWidth = typeof window !== 'undefined' ? window?.innerWidth : '0'
 
    return (
       <section className="bg-accent relative flex min-h-screen w-full flex-col items-center justify-center px-4 pt-24 pb-20 overflow-hidden">
-         <div className="mx-auto w-full max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+         <div className="mx-auto w-full max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center mb-10 lg:mb-0">
             {/* Text Content */}
             <div className="flex flex-col items-start z-10 w-full lg:col-span-8">
                {/* <div className="flex items-center gap-2 mb-8">
@@ -26,6 +25,8 @@ export function Hero() {
                <TextType
                   as="h1"
                   text="Lautaro Fullone"
+                  startOnVisible
+                  loop={false}
                   showCursor
                   typingSpeed={150}
                   pauseDuration={8000}
@@ -33,7 +34,7 @@ export function Hero() {
                   cursorClassName="font-normal"
                   deletingSpeed={50}
                   cursorBlinkDuration={0.6}
-                  className="font-sans text-5xl font-bold tracking-tighter sm:tracking-tight text-foreground sm:text-7xl lg:text-8xl text-balance"
+                  className="font-sans text-7xl font-bold tracking-tighter sm:tracking-tight text-foreground lg:text-8xl text-balance"
                />
 
                <p className="mt-4 text-xl font-medium text-primary sm:text-2xl">
@@ -45,7 +46,6 @@ export function Hero() {
                   style={{ animationDelay: '0.2s' }}
                >
                   {t.hero.subtitle[locale]}
-                  {''} {userWindowWidth}
                </p>
 
                <div className="mt-10 flex flex-wrap items-center gap-4">
