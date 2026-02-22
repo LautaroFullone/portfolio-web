@@ -172,7 +172,7 @@ const dictionary = {
             },
             {
                period: '2020 \u2014 2021',
-               role: 'Desarrollador Junior',
+               role: 'Desarrollador Web',
                company: 'Tember',
                description:
                   'Primera contratación de ingeniería. Construí el MVP que aseguró la ronda semilla. Asumí múltiples roles entre frontend, backend y DevOps.',
@@ -206,7 +206,7 @@ const dictionary = {
             },
             {
                period: '2017 \u2014 2018',
-               role: 'Junior Developer',
+               role: 'Web Developer',
                company: 'StartupLab',
                description:
                   'First engineering hire. Built the MVP that secured seed funding. Wore many hats across frontend, backend, and DevOps.',

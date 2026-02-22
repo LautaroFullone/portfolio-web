@@ -5,7 +5,6 @@ import { Navbar } from '@/components/navbar'
 import { Hero } from '@/components/hero'
 import { Approach } from '@/components/approach'
 import { Technologies } from '@/components/technologies'
-import { TechnologiesNew } from '@/components/technologiesNew'
 import { Projects } from '@/components/projects'
 import { Experience } from '@/components/experience'
 import { Philosophy } from '@/components/philosophy'
@@ -19,8 +18,7 @@ export default function Home() {
          <main>
             <Hero />
             <Approach />
-            <TechnologiesNew />
-            {/* <Technologies /> */}
+            <Technologies />
             <Projects />
             <Experience />
             <Philosophy />

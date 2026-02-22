@@ -3,6 +3,7 @@
 import { Building2, Rocket } from 'lucide-react'
 import { useI18n } from '@/lib/i18n'
 import DecryptedText from './ui/react-bits/DecryptedText'
+import SectionHeader from './shared/section-header'
 
 export function Approach() {
    const { locale, t } = useI18n()
@@ -10,23 +11,10 @@ export function Approach() {
    return (
       <section id="approach" className="px-6 py-28 lg:py-36">
          <div className="mx-auto max-w-6xl">
-            <p className="font-mono text-sm tracking-widest text-primary uppercase mb-4">
-               <DecryptedText
-                  text={t.approach.label[locale]}
-                  animateOn="view"
-                  speed={80}
-                  maxIterations={15}
-                  useOriginalCharsOnly
-               />
-            </p>
-            <h2 className="font-sans text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance">
-               <DecryptedText
-                  text={t.approach.title[locale]}
-                  animateOn="view"
-                  speed={100}
-                  maxIterations={25}
-               />
-            </h2>
+            <SectionHeader
+               label={t.approach.label[locale]}
+               title={t.approach.title[locale]}
+            />
 
             <div className="mt-16 grid gap-8 md:grid-cols-2">
                {/* Corporate */}
