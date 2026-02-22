@@ -6,7 +6,7 @@ export type Locale = 'es' | 'en'
 
 const dictionary = {
    nav: {
-      approach: { es: 'Enfoque', en: 'Approach' },
+      approach: { es: 'Como Trabajo', en: 'How I Work' },
       technologies: { es: 'Tecnologías', en: 'Technologies' },
       projects: { es: 'Proyectos', en: 'Projects' },
       experience: { es: 'Experiencia', en: 'Experience' },
@@ -79,11 +79,11 @@ const dictionary = {
       },
    },
    technologies: {
-      label: { es: 'Stack', en: 'Stack' },
+      label: { es: 'Mi ecosistema de desarrollo', en: 'My development ecosystem' },
       title: { es: 'Tecnologías', en: 'Technologies' },
       description: {
-         es: 'Herramientas y frameworks que uso a diario para entregar software confiable y de alto rendimiento.',
-         en: 'Tools and frameworks I use daily to ship reliable, performant software.',
+         es: 'Más que un listado de conocimientos, es el conjunto de herramientas que elijo y domino para construir software eficiente y escalable.',
+         en: 'More than a list of knowledge, it is the set of tools that I choose and master to build efficient and scalable software.',
       },
    },
    projects: {

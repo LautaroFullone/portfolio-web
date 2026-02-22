@@ -2,318 +2,131 @@
 
 import { useI18n } from '@/lib/i18n'
 import LogoLoop from './ui/react-bits/LogoLoop'
-import DecryptedText from './ui/react-bits/DecryptedText'
 import SectionHeader from './shared/section-header'
+import Image from 'next/image'
+import { useState, useEffect } from 'react'
+import { useTheme } from 'next-themes'
 
-//TODO: usar los svg desde https://svgl.app
-const technologies = [
-   {
-      name: 'React',
-      icon: (
-         <svg viewBox="0 0 24 24" fill="none" className="h-8 w-8" aria-hidden="true">
-            <circle cx="12" cy="12" r="2.5" fill="currentColor" />
-            <ellipse
-               cx="12"
-               cy="12"
-               rx="10"
-               ry="4"
-               stroke="currentColor"
-               strokeWidth="1.5"
-               fill="none"
-            />
-            <ellipse
-               cx="12"
-               cy="12"
-               rx="10"
-               ry="4"
-               stroke="currentColor"
-               strokeWidth="1.5"
-               fill="none"
-               transform="rotate(60 12 12)"
-            />
-            <ellipse
-               cx="12"
-               cy="12"
-               rx="10"
-               ry="4"
-               stroke="currentColor"
-               strokeWidth="1.5"
-               fill="none"
-               transform="rotate(120 12 12)"
-            />
-         </svg>
-      ),
-   },
-   {
-      name: 'TypeScript',
-      icon: (
-         <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
-            <rect
-               x="2"
-               y="2"
-               width="20"
-               height="20"
-               rx="2"
-               fill="currentColor"
-               opacity="0.15"
-            />
-            <text
-               x="12"
-               y="17"
-               textAnchor="middle"
-               fontSize="12"
-               fontWeight="bold"
-               fill="currentColor"
-            >
-               TS
-            </text>
-         </svg>
-      ),
-   },
-   {
-      name: 'Node.js',
-      icon: (
-         <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
-            <path
-               d="M12 2L3 7v10l9 5 9-5V7l-9-5z"
-               fill="currentColor"
-               opacity="0.15"
-               stroke="currentColor"
-               strokeWidth="1.5"
-            />
-            <text
-               x="12"
-               y="15"
-               textAnchor="middle"
-               fontSize="7"
-               fontWeight="bold"
-               fill="currentColor"
-            >
-               N
-            </text>
-         </svg>
-      ),
-   },
-   {
-      name: 'PostgreSQL',
-      icon: (
-         <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
-            <ellipse
-               cx="12"
-               cy="8"
-               rx="8"
-               ry="4"
-               fill="currentColor"
-               opacity="0.15"
-               stroke="currentColor"
-               strokeWidth="1.5"
-            />
-            <path
-               d="M4 8v8c0 2.2 3.6 4 8 4s8-1.8 8-4V8"
-               fill="none"
-               stroke="currentColor"
-               strokeWidth="1.5"
-            />
-            <path
-               d="M4 12c0 2.2 3.6 4 8 4s8-1.8 8-4"
-               fill="none"
-               stroke="currentColor"
-               strokeWidth="1.5"
-            />
-         </svg>
-      ),
-   },
-   {
-      name: 'Prisma',
-      icon: (
-         <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
-            <path
-               d="M12 2L4 20h16L12 2z"
-               fill="currentColor"
-               opacity="0.15"
-               stroke="currentColor"
-               strokeWidth="1.5"
-               strokeLinejoin="round"
-            />
-         </svg>
-      ),
-   },
-   {
-      name: 'Tailwind CSS',
-      icon: (
-         <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
-            <path
-               d="M6 12c1.3-4 3.7-6 7-6 5 0 5.5 3.5 8 4.5-1.5 2-3.3 2.5-5.5 1.5C13.8 11.2 12 12 6 12zm-4 6c1.3-4 3.7-6 7-6 5 0 5.5 3.5 8 4.5-1.5 2-3.3 2.5-5.5 1.5C9.8 17.2 8 18 2 18z"
-               fill="currentColor"
-               opacity="0.15"
-               stroke="currentColor"
-               strokeWidth="1.5"
-            />
-         </svg>
-      ),
-   },
-   {
-      name: 'Next.js',
-      icon: (
-         <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
-            <circle
-               cx="12"
-               cy="12"
-               r="10"
-               fill="currentColor"
-               opacity="0.15"
-               stroke="currentColor"
-               strokeWidth="1.5"
-            />
-            <text
-               x="12"
-               y="16"
-               textAnchor="middle"
-               fontSize="8"
-               fontWeight="bold"
-               fill="currentColor"
-            >
-               N
-            </text>
-         </svg>
-      ),
-   },
-   {
-      name: 'Docker',
-      icon: (
-         <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
-            <rect
-               x="3"
-               y="10"
-               width="18"
-               height="10"
-               rx="2"
-               fill="currentColor"
-               opacity="0.15"
-               stroke="currentColor"
-               strokeWidth="1.5"
-            />
-            <rect x="6" y="6" width="3" height="4" fill="currentColor" opacity="0.3" />
-            <rect x="10.5" y="6" width="3" height="4" fill="currentColor" opacity="0.3" />
-            <rect x="15" y="6" width="3" height="4" fill="currentColor" opacity="0.3" />
-         </svg>
-      ),
-   },
-   {
-      name: 'VPS',
-      icon: (
-         <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
-            <polygon
-               points="12,3 21,8 21,16 12,21 3,16 3,8"
-               fill="currentColor"
-               opacity="0.15"
-               stroke="currentColor"
-               strokeWidth="1.5"
-            />
-            <circle cx="12" cy="12" r="3" fill="currentColor" opacity="0.4" />
-         </svg>
-      ),
-   },
-   {
-      name: 'Storybook',
-      icon: (
-         <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
-            <rect
-               x="4"
-               y="4"
-               width="16"
-               height="16"
-               rx="3"
-               fill="currentColor"
-               opacity="0.15"
-               stroke="currentColor"
-               strokeWidth="1.5"
-            />
-            <path
-               d="M8 12h8M12 8v8"
-               stroke="currentColor"
-               strokeWidth="2"
-               strokeLinecap="round"
-            />
-         </svg>
-      ),
-   },
-   {
-      name: 'Git',
-      icon: (
-         <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
-            <circle
-               cx="7"
-               cy="7"
-               r="2.5"
-               fill="currentColor"
-               opacity="0.3"
-               stroke="currentColor"
-               strokeWidth="1.5"
-            />
-            <circle
-               cx="17"
-               cy="17"
-               r="2.5"
-               fill="currentColor"
-               opacity="0.3"
-               stroke="currentColor"
-               strokeWidth="1.5"
-            />
-            <circle
-               cx="17"
-               cy="7"
-               r="2.5"
-               fill="currentColor"
-               opacity="0.3"
-               stroke="currentColor"
-               strokeWidth="1.5"
-            />
-            <path
-               d="M7 9.5V15a2 2 0 002 2h6M17 9.5V9.5"
-               fill="none"
-               stroke="currentColor"
-               strokeWidth="1.5"
-            />
-         </svg>
-      ),
-   },
-   {
-      name: 'MongoDB',
-      icon: (
-         <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
-            <path
-               d="M2 16l10 4 10-4"
-               fill="none"
-               stroke="currentColor"
-               strokeWidth="1.5"
-            />
-            <path
-               d="M2 12l10 4 10-4"
-               fill="none"
-               stroke="currentColor"
-               strokeWidth="1.5"
-            />
-            <path
-               d="M2 8l10 4 10-4-10-4L2 8z"
-               fill="currentColor"
-               opacity="0.15"
-               stroke="currentColor"
-               strokeWidth="1.5"
-            />
-         </svg>
-      ),
-   },
+import bunIcon from '@/assets/icons/bun.svg'
+import cloudflareIcon from '@/assets/icons/cloudflare.svg'
+import dockerIcon from '@/assets/icons/docker.svg'
+import gitIcon from '@/assets/icons/git.svg'
+import grafanaIcon from '@/assets/icons/grafana.svg'
+import javaIcon from '@/assets/icons/java.svg'
+import javascriptIcon from '@/assets/icons/javascript.svg'
+import laravelIcon from '@/assets/icons/laravel.svg'
+import mercadoPagoIcon from '@/assets/icons/mercado-pago.svg'
+import n8nIcon from '@/assets/icons/n8n.svg'
+import nestjsIcon from '@/assets/icons/nestjs.svg'
+import nextjsIconDark from '@/assets/icons/nextjs_icon_dark.svg'
+import nodejsIcon from '@/assets/icons/nodejs.svg'
+import postgresqlIcon from '@/assets/icons/postgresql.svg'
+import postmanIcon from '@/assets/icons/postman.svg'
+import reactqueryIcon from '@/assets/icons/reactquery.svg'
+import reactrouterIcon from '@/assets/icons/reactrouter.svg'
+import salesforceIcon from '@/assets/icons/salesforce.svg'
+import springIcon from '@/assets/icons/spring.svg'
+import supabaseIcon from '@/assets/icons/supabase.svg'
+import swaggerIcon from '@/assets/icons/swagger.svg'
+import tailwindcssIcon from '@/assets/icons/tailwindcss.svg'
+import tanstackIcon from '@/assets/icons/tanstack.svg'
+import typescriptIcon from '@/assets/icons/typescript.svg'
+import viteIcon from '@/assets/icons/vite.svg'
+import githubDark from '@/assets/icons/GitHub_dark.svg'
+import githubLight from '@/assets/icons/GitHub_light.svg'
+import mongodbDark from '@/assets/icons/MongoDB_dark.svg'
+import mongodbLight from '@/assets/icons/MongoDB_light.svg'
+import mysqlDark from '@/assets/icons/MySQL_dark.svg'
+import mysqlLight from '@/assets/icons/MySQL_light.svg'
+import prismaDark from '@/assets/icons/Prisma_dark.svg'
+import prismaLight from '@/assets/icons/Prisma_light.svg'
+import reactDark from '@/assets/icons/React_dark.svg'
+import reactLight from '@/assets/icons/React_light.svg'
+import vercelDark from '@/assets/icons/Vercel_dark.svg'
+import vercelLight from '@/assets/icons/Vercel_light.svg'
+
+type TechIconProps = {
+   name: string
+   icon?: any
+   lightIcon?: any
+   darkIcon?: any
+}
+
+const rawTechnologies: TechIconProps[] = [
+   { name: 'Bun', icon: bunIcon },
+   { name: 'Cloudflare', icon: cloudflareIcon },
+   { name: 'Docker', icon: dockerIcon },
+   { name: 'Git', icon: gitIcon },
+   { name: 'Grafana', icon: grafanaIcon },
+   { name: 'Java', icon: javaIcon },
+   { name: 'JavaScript', icon: javascriptIcon },
+   { name: 'Laravel', icon: laravelIcon },
+   { name: 'Mercado Pago', icon: mercadoPagoIcon },
+   { name: 'n8n', icon: n8nIcon },
+   { name: 'NestJS', icon: nestjsIcon },
+   { name: 'Next.js', icon: nextjsIconDark },
+   { name: 'Node.js', icon: nodejsIcon },
+   { name: 'PostgreSQL', icon: postgresqlIcon },
+   { name: 'Postman', icon: postmanIcon },
+   { name: 'React Query', icon: reactqueryIcon },
+   { name: 'React Router', icon: reactrouterIcon },
+   { name: 'Salesforce', icon: salesforceIcon },
+   { name: 'Spring', icon: springIcon },
+   { name: 'Supabase', icon: supabaseIcon },
+   { name: 'Swagger', icon: swaggerIcon },
+   { name: 'Tailwind CSS', icon: tailwindcssIcon },
+   { name: 'TanStack', icon: tanstackIcon },
+   { name: 'TypeScript', icon: typescriptIcon },
+   { name: 'Vite', icon: viteIcon },
+   { name: 'GitHub', lightIcon: githubLight, darkIcon: githubDark },
+   { name: 'MongoDB', lightIcon: mongodbLight, darkIcon: mongodbDark },
+   { name: 'MySQL', lightIcon: mysqlLight, darkIcon: mysqlDark },
+   { name: 'Prisma', lightIcon: prismaLight, darkIcon: prismaDark },
+   { name: 'React', lightIcon: reactLight, darkIcon: reactDark },
+   { name: 'Vercel', lightIcon: vercelLight, darkIcon: vercelDark },
 ]
+
+const shuffleArray = <T,>(array: T[]): T[] => {
+   const newArray = [...array]
+   for (let i = newArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1))
+      ;[newArray[i], newArray[j]] = [newArray[j], newArray[i]]
+   }
+   return newArray
+}
 
 export function Technologies() {
    const { locale, t } = useI18n()
+   const [shuffledTechs, setShuffledTechs] = useState<TechIconProps[]>(rawTechnologies)
+   const { resolvedTheme } = useTheme()
+   const [mounted, setMounted] = useState(false)
 
-   const techLogos = technologies.map((tech) => ({
+   useEffect(() => {
+      setMounted(true)
+      setShuffledTechs(shuffleArray(rawTechnologies))
+   }, [])
+
+   const techLogos = shuffledTechs.map((tech) => ({
       node: (
-         <div className="group flex flex-col items-center justify-center gap-3 border border-border bg-card h-32 w-32 rounded-xl transition-all duration-300 hover:border-primary/50 hover:bg-secondary">
-            <div className="text-muted-foreground transition-colors duration-300 group-hover:text-primary">
-               {tech.icon}
+         <div
+            key={tech.name}
+            className="group flex flex-col items-center justify-center gap-3 border bg-card h-32 w-32 rounded-xl transition-all duration-300 hover:border-primary hover:scale-105"
+         >
+            <div className="text-muted-foreground transition-colors duration-300 group-hover:text-primary relative h-10 w-10 flex items-center justify-center">
+               {tech.icon && (
+                  <Image
+                     src={tech.icon}
+                     alt={tech.name}
+                     className="w-10 h-10 object-contain"
+                  />
+               )}
+               {tech.lightIcon && tech.darkIcon && mounted && (
+                  <Image
+                     src={resolvedTheme === 'dark' ? tech.darkIcon : tech.lightIcon}
+                     alt={tech.name}
+                     className="w-10 h-10 object-contain"
+                  />
+               )}
             </div>
             <span className="font-mono text-xs text-muted-foreground transition-colors duration-300 group-hover:text-foreground text-center">
                {tech.name}
@@ -336,22 +149,20 @@ export function Technologies() {
                description={t.technologies.description[locale]}
             />
 
-            <div className="mt-16 flex flex-col w-screen relative left-1/2 -ml-[50vw] space-y-6">
+            <div className="mt-16 flex flex-col w-screen relative left-1/2 -ml-[50vw]">
                <LogoLoop
                   logos={techLogos1}
                   direction="left"
                   speed={40}
-                  // gap={32}
-                  // logoHeight={128}
                   pauseOnHover={true}
+                  className="p-3"
                />
                <LogoLoop
                   logos={techLogos2}
                   direction="right"
                   speed={40}
-                  // gap={32}
-                  // logoHeight={128}
                   pauseOnHover={true}
+                  className="p-3"
                />
             </div>
          </div>

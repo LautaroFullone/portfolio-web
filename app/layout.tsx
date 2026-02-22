@@ -7,13 +7,13 @@ import localFont from 'next/font/local'
 import ClickSpark from '@/components/ui/react-bits/ClickSpark'
 
 const workSans = localFont({
-   src: '../assets/WorkSans-VariableFont_wght.ttf',
+   src: '../assets/fonts/WorkSans-VariableFont_wght.ttf',
    variable: '--font-work-sans',
    display: 'swap',
 })
 
 const jetbrainsMono = localFont({
-   src: '../assets/JetBrainsMono-Medium.woff2',
+   src: '../assets/fonts/JetBrainsMono-Medium.woff2',
    variable: '--font-jetbrains',
    weight: '500',
    style: 'normal',
