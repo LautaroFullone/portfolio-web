@@ -9,7 +9,7 @@ export function Experience() {
    const items = t.experience.items[locale]
 
    return (
-      <section id="experience" className="px-6 py-28 lg:py-36">
+      <section id="experience" className="px-6 py-28 lg:py-36 bg-muted">
          <div className="mx-auto max-w-6xl">
             <SectionHeader
                label={t.experience.label[locale]}

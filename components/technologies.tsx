@@ -43,10 +43,6 @@ import reactDark from '@/assets/icons/React_dark.svg'
 import reactLight from '@/assets/icons/React_light.svg'
 import vercelDark from '@/assets/icons/Vercel_dark.svg'
 import vercelLight from '@/assets/icons/Vercel_light.svg'
-import expressDark from '@/assets/icons/Express.js_dark.svg'
-import expressLight from '@/assets/icons/Express.js_light.svg'
-import shadcnDark from '@/assets/icons/ui_dark.svg'
-import shadcnLight from '@/assets/icons/ui_light.svg'
 
 type TechIconProps = {
    name: string
@@ -86,8 +82,6 @@ const rawTechnologies: TechIconProps[] = [
    { name: 'Prisma', lightIcon: prismaLight, darkIcon: prismaDark },
    { name: 'React', lightIcon: reactLight, darkIcon: reactDark },
    { name: 'Vercel', lightIcon: vercelLight, darkIcon: vercelDark },
-   { name: 'Express.js', lightIcon: expressLight, darkIcon: expressDark },
-   { name: 'shadcn/ui', lightIcon: shadcnLight, darkIcon: shadcnDark },
 ]
 
 const shuffleArray = <T,>(array: T[]): T[] => {
@@ -114,7 +108,7 @@ export function Technologies() {
       node: (
          <div
             key={tech.name}
-            className="group flex flex-col items-center justify-center gap-3 border border-border bg-card h-32 w-32 rounded-xl transition-all duration-300 hover:border-primary! hover:shadow-[0_0_15px_rgba(217,119,87,0.15)] hover:scale-105"
+            className="group flex flex-col items-center justify-center gap-3 border border-border bg-card h-32 w-32 rounded-xl transition-all duration-300 hover:border-primary hover:shadow-[0_0_15px_rgba(217,119,87,0.15)] hover:scale-105"
          >
             <div className="text-muted-foreground transition-colors duration-300 group-hover:text-primary relative h-10 w-10 flex items-center justify-center">
                {tech.icon && (

@@ -11,7 +11,7 @@ export function Philosophy() {
    const items = t.philosophy.items[locale]
 
    return (
-      <section className="px-6 py-28 lg:py-36 bg-muted">
+      <section className="px-6 py-28 lg:py-36">
          <div className="mx-auto max-w-6xl">
             <SectionHeader
                label={t.philosophy.label[locale]}

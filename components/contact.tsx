@@ -10,7 +10,7 @@ export function Contact() {
    const { locale, t } = useI18n()
 
    return (
-      <section id="contact" className="px-6 py-28 lg:py-36">
+      <section id="contact" className="px-6 py-28 lg:py-36 bg-muted">
          <div className="mx-auto max-w-6xl">
             <SectionHeader
                label={t.contact.label[locale]}
