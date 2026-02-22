@@ -87,11 +87,11 @@ const dictionary = {
       },
    },
    projects: {
-      label: { es: 'Trabajo', en: 'Work' },
-      title: { es: 'Proyectos Seleccionados', en: 'Selected Projects' },
+      label: { es: 'El Resultado', en: 'The Result' },
+      title: { es: 'Proyectos', en: 'Projects' },
       description: {
-         es: 'Una selección de proyectos que demuestran mi enfoque para resolver problemas reales con código limpio y mantenible.',
-         en: 'A selection of projects that demonstrate my approach to solving real-world problems with clean, maintainable code.',
+         es: 'Esta es una selección de los desafíos que más disfruté construir, proyectos reales que pasaron de ser una idea a convertirse en productos funcionales.',
+         en: 'This is a selection of the challenges I most enjoyed building, real projects that went from being an idea to becoming functional products.',
       },
       featured: { es: 'Proyecto Destacado', en: 'Featured Project' },
       items: {

@@ -1,17 +1,9 @@
 'use client'
 
-import Image from 'next/image'
+import SectionHeader from './shared/section-header'
 import { ArrowUpRight } from 'lucide-react'
 import { useI18n } from '@/lib/i18n'
-import DecryptedText from './ui/react-bits/DecryptedText'
-import SectionHeader from './shared/section-header'
-
-const projectTags = [
-   ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Tailwind'],
-   ['React', 'Node.js', 'Redis', 'GraphQL'],
-   ['Node.js', 'PostgreSQL', 'Docker', 'AWS'],
-   ['Next.js', 'TypeScript', 'Prisma', 'Chart.js'],
-]
+import Image from 'next/image'
 
 export function Projects() {
    const { locale, t } = useI18n()
@@ -57,16 +49,6 @@ export function Projects() {
                         <p className="mt-4 text-muted-foreground leading-relaxed">
                            {items[0].description}
                         </p>
-                        <div className="mt-6 flex flex-wrap gap-2">
-                           {projectTags[0].map((tag) => (
-                              <span
-                                 key={tag}
-                                 className="font-mono text-xs bg-secondary text-secondary-foreground px-3 py-1"
-                              >
-                                 {tag}
-                              </span>
-                           ))}
-                        </div>
                      </div>
                   </div>
                </article>
@@ -96,22 +78,12 @@ export function Projects() {
                               </h3>
                               <ArrowUpRight
                                  size={18}
-                                 className="flex-shrink-0 text-muted-foreground transition-all duration-300 group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                                 className="shrink-0 text-muted-foreground transition-all duration-300 group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                               />
                            </div>
                            <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                               {project.description}
                            </p>
-                           <div className="mt-auto pt-4 flex flex-wrap gap-2">
-                              {projectTags[idx + 1].map((tag) => (
-                                 <span
-                                    key={tag}
-                                    className="font-mono text-xs bg-primary text-primary-foreground px-2 py-0.5"
-                                 >
-                                    {tag}
-                                 </span>
-                              ))}
-                           </div>
                         </div>
                      </article>
                   ))}
