@@ -34,7 +34,7 @@ export function Hero() {
                   cursorClassName="font-normal"
                   deletingSpeed={50}
                   cursorBlinkDuration={0.6}
-                  className="font-sans text-7xl font-bold tracking-tighter sm:tracking-tight text-foreground lg:text-8xl text-balance"
+                  className="font-sans text-7xl font-bold tracking-tight text-foreground lg:text-8xl text-balance"
                />
 
                <p className="mt-4 text-xl font-medium text-primary sm:text-2xl">
