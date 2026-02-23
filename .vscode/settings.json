@@ -1,0 +1,20 @@
+{
+   "workbench.colorCustomizations": {
+      // Barra superior (Title bar)
+      "titleBar.activeBackground": "#b05730", // Tono muted oscuro de tu globals
+      "titleBar.activeForeground": "#ffffff", // Texto claro para contraste
+      "titleBar.inactiveBackground": "#b05730", // Tono accent aún más oscuro
+      "titleBar.inactiveForeground": "#b7b5a9", // Gris más apagado
+
+      // Activity bar (barra izquierda)
+      "activityBar.background": "#b05730", // Tono accent oscuro
+      "activityBar.foreground": "#ffffff", // Tu color primary (coral/naranja)
+      "activityBar.inactiveForeground": "#b7b5a9", // Muted foreground oscuro
+      "activityBar.activeBorder": "#d97757", // Tu primary para resaltar el borde activo
+
+      // Status bar (barra inferior)
+      "statusBar.background": "#b05730", // Tono del sidebar oscuro
+      "statusBar.foreground": "#ffffff", // Foreground general
+      "statusBar.debuggingBackground": "#b05730" // Tu chart-1 (naranja más oscuro) para el modo debug
+   }
+}
