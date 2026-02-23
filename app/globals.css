@@ -194,3 +194,35 @@
       transform: translateY(0);
    }
 }
+
+/* Timeline mobile spacing */
+.timeline-mobile-indent {
+   padding-left: 40px;
+}
+
+@media (min-width: 768px) {
+   .timeline-mobile-indent {
+      padding-left: 0;
+   }
+}
+
+.timeline-line-left {
+   left: 16px;
+}
+
+@media (min-width: 768px) {
+   .timeline-line-left {
+      left: 140px;
+   }
+}
+
+.timeline-content-indent {
+   padding-left: 40px;
+}
+
+@media (min-width: 768px) {
+   .timeline-content-indent {
+      padding-left: 32px;
+      /* equiv a pl-8 en desktop */
+   }
+}
