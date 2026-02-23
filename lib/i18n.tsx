@@ -157,7 +157,7 @@ const dictionary = {
             {
                period: '2025 - Presente',
                role: 'Líder Técnico Frontend',
-               company: 'Accenture - Client: Banco Galicia',
+               company: 'Accenture | Cliente: Banco Galicia',
                description:
                   'Liderando la arquitectura frontend de la plataforma principal. Introduje un sistema de diseño que redujo el tiempo de desarrollo un 35%. Mentoreando un equipo de 5 ingenieros.',
                impact: 'Aca podria ir el impacto principal',
@@ -165,7 +165,7 @@ const dictionary = {
             {
                period: '2024 - 2025',
                role: 'Desarrollador Frontend',
-               company: 'Accenture - Client: Banco Galicia',
+               company: 'Accenture | Cliente: Banco Galicia',
                description:
                   'Liderando la arquitectura frontend de la plataforma principal. Introduje un sistema de diseño que redujo el tiempo de desarrollo un 35%. Mentoreando un equipo de 5 ingenieros.',
                impact: 'Aca podria ir el impacto principal',
@@ -173,7 +173,7 @@ const dictionary = {
             {
                period: '2021 - 2022',
                role: 'Desarrollador Salesforce',
-               company: 'Accenture - Proyecto Manage my Sales',
+               company: 'Accenture | Proyecto: Manage my Sales',
                description:
                   'Entregué más de 20 proyectos para clientes en salud, fintech y e-commerce. Establecí una librería de componentes y estándares de testing para el equipo.',
                impact: 'Aca podria ir el impacto principal',

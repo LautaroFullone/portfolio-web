@@ -35,6 +35,7 @@ interface ScrollStackProps {
    rotationAmount?: number
    blurAmount?: number
    useWindowScroll?: boolean
+   bottomPadding?: string
    onStackComplete?: () => void
 }
 
@@ -51,6 +52,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
    rotationAmount = 0,
    blurAmount = 0,
    useWindowScroll = false,
+   bottomPadding = '0px',
    onStackComplete,
 }) => {
    const scrollerRef = useRef<HTMLDivElement>(null)
@@ -241,12 +243,12 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
             duration: 1.2,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
             smoothWheel: true,
-            touchMultiplier: 2,
+            touchMultiplier: 1,
             infinite: false,
             wheelMultiplier: 1,
             lerp: 0.1,
             syncTouch: true,
-            syncTouchLerp: 0.075,
+            syncTouchLerp: 0.1,
          })
 
          lenis.on('scroll', handleScroll)
@@ -269,13 +271,13 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
             duration: 1.2,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
             smoothWheel: true,
-            touchMultiplier: 2,
+            touchMultiplier: 1,
             infinite: false,
             gestureOrientation: 'vertical',
             wheelMultiplier: 1,
             lerp: 0.1,
             syncTouch: true,
-            syncTouchLerp: 0.075,
+            syncTouchLerp: 0.1,
          })
 
          lenis.on('scroll', handleScroll)
@@ -365,7 +367,8 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
          }}
       >
          <div
-            className={`scroll-stack-inner ${useWindowScroll ? 'pb-[50vh]' : 'pt-[20vh] px-20 pb-[50rem] min-h-screen'}`}
+            className={`scroll-stack-inner ${useWindowScroll ? '' : 'pt-[20vh] px-20 pb-[50rem] min-h-screen'}`}
+            style={useWindowScroll ? { paddingBottom: bottomPadding } : {}}
          >
             {children}
             {/* Spacer so the last pin can release cleanly */}
