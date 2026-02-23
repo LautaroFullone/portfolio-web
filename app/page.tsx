@@ -7,9 +7,10 @@ import { Approach } from '@/components/approach'
 import { Technologies } from '@/components/technologies'
 import { Projects } from '@/components/projects'
 import { Experience } from '@/components/experience'
-import { Philosophy } from '@/components/philosophy'
+// import { Philosophy } from '@/components/philosophy'
 import { Contact } from '@/components/contact'
 import { Footer } from '@/components/footer'
+import { Phrase } from '@/components/phrase'
 
 export default function Home() {
    return (
@@ -21,7 +22,8 @@ export default function Home() {
             <Technologies />
             <Projects />
             <Experience />
-            <Philosophy />
+            {/* <Philosophy /> */}
+            <Phrase />
             <Contact />
          </main>
          <Footer />
