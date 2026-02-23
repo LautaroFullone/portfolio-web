@@ -31,15 +31,14 @@ const dictionary = {
       },
    },
    approach: {
-      label: { es: 'Dos Mundos, Una Mentalidad', en: 'Approach' },
-      title: { es: 'Cómo Trabajo', en: 'Two Worlds, One Mindset' },
+      label: { es: 'Dos Mundos - Una Mentalidad', en: 'Two Worlds - One Mindset' },
+      title: { es: 'Cómo Trabajo', en: 'How I Work' },
       corporateTitle: {
          es: 'Trayectoria Corporativa',
          en: 'Corporate Trajectory',
       },
       corporateDescription: {
          es: 'Trabajo liderando desarrollos en entornos de alta exigencia y a gran escala. No solo escribo código; guío equipos para asegurar que cada despliegue sea robusto y escalable.',
-         // es: 'Trabajo liderando desarrollos en entornos de alta exigencia y a gran escala, donde la arquitectura sólida, el código limpio y los despliegues robustos no se negocian. No solo escribo código, guío a otros desarrolladores y aseguro el correcto funcionamiento.',
          en: 'Leading critical systems with solid architecture, clean code, and robust deployments. Not just writing code, guiding other developers, and ensuring the product scales.',
       },
       corporateItems: {
@@ -48,17 +47,19 @@ const dictionary = {
             'Colaboración en grandes equipos',
             'Integración y despliegue continuo',
          ],
-         en: [],
+         en: [
+            'Technical leadership and mentoring',
+            'Collaboration in large teams',
+            'Integration and continuous deployment',
+         ],
       },
       independentTitle: {
          es: 'Proyectos Independientes',
          en: 'Independent Projects',
       },
       independentDescription: {
-         // es: 'Apasionado por construir productos de cero a uno. Asumiendo la responsabilidad completa del stack, desde la arquitectura del sistema hasta el despliegue y la experiencia de usuario. Tratando cada proyecto personal con el mismo rigor que el software de producción.',
          es: 'Me apasiona llevar ideas desde el papel hasta el servidor. Me involucro en todo el ciclo: diseño, infraestructura y negocio, tratando cada proyecto con el rigor de un producto real.',
-         // es: 'Llevo ideas desde el papel hasta el servidor. Me involucro con el negocio y analizo todo su ciclo de vida, diseño la solución, levanto la infraestructura y conecto los servicios necesarios. Trato cada proyecto con la misma seriedad que un software de producción a gran escala.',
-         en: 'Passionate about building products from zero to one. Owning the full stack, from system architecture to deployment and user experience. Treating every side project with the same rigor as production-level software.',
+         en: 'I love bringing ideas from paper to the server. I get involved in the entire cycle: design, infrastructure, and business, treating each project with the rigor of a real product.',
       },
       independentItems: {
          es: [
@@ -68,9 +69,8 @@ const dictionary = {
          ],
          en: [
             'Full ownership from idea to launch',
-            'Architecture & system design',
-            'Product vision & user empathy',
-            'Rapid iteration & shipping',
+            'Agile development and fast delivery',
+            'Total focus on user experience',
          ],
       },
       quote: {
@@ -97,46 +97,54 @@ const dictionary = {
       items: {
          es: [
             {
-               title: 'Silk',
+               label: '<Web type="Landing" editor="WYSIWYG" adminPanel />',
+               title: 'SILK',
                description:
-                  'Plataforma SPA para marca personal de estilismo y asesoría de imagen. Incluye venta de productos digitales y servicios, panel de administración, gestión de contenido (blog con editor enriquecido), integración de pagos y captación estratégica de leads.',
+                  'Transformé la visión de la marca en un ecosistema digital completo. Desarrollé un sistema que no solo es una web, sino una herramienta estratégica para gestionar contenidos, automatizar ventas de productos digitales y captar leads de forma eficiente.',
             },
             {
-               title: 'Aquazul',
+               label: '<Web type="Landing" payments="MP" tournamentsPanel />',
+               title: 'ASOC. PADEL MAR DEL PLATA',
                description:
-                  'Sistema de gestión para lavandería industrial con múltiples roles (Admin, Operario y Cliente). Permite administración de artículos y precios personalizados por cliente, generación de pedidos, remitos, control de reclamos y visualización de estadísticas.',
+                  'Digitalicé la pasión de mi ciudad. Un sistema integral diseñado para automatizar la logística de torneos y reservas en tiempo real, mejorando la experiencia de la comunidad y simplificando la operatividad administrativa de punta a punta.',
             },
             {
-               title: 'Asociación de Pádel',
+               label: '<Web type="System" charts="analytics" adminPanel />',
+               title: 'AQUAZUL',
                description:
-                  'Sitio web institucional y sistema de gestión para torneos y reservas. Enfocado en digitalizar la organización de canchas, jugadores y eventos, mejorando la experiencia administrativa y operativa.',
+                  'Llevé el rigor del software corporativo al sector industrial. Creé un panel administrativo robusto con multiples roles que controla desde la gestión de inventarios y pedidos personalizados hasta estadísticas críticas, permitiendo un control total de la operativa en tiempo real.',
             },
             {
+               label: '<Web type="System" management="RT" reservationsPanel />',
                title: 'Full Court',
                description:
-                  'Aplicación para gestión de canchas deportivas con control de reservas, clientes y consumos. Arquitectura fullstack con React, Node.js y Prisma, diseñada con enfoque escalable y buenas prácticas de producto.',
+                  'Mi terreno de juego favorito. Desarrollé una arquitectura escalable para el control total de centros deportivos, enfocada en resolver la complejidad de las reservas y consumos con una interfaz fluida y una lógica de negocio sólida.',
             },
          ],
          en: [
             {
-               title: 'Silk',
+               label: '<Web type="Landing" editor="WYSIWYG" adminPanel />',
+               title: 'SILK',
                description:
-                  'E-commerce y plataforma de captación para marca personal. Arquitectura fullstack orientada a escalabilidad, con panel administrativo, gestión dinámica de contenido, venta de productos digitales y automatización de procesos comerciales.',
+                  "I transformed the brand's vision into a complete digital ecosystem. I developed a system that is not only a website but a strategic tool for managing content, automating digital product sales, and capturing leads efficiently.",
             },
             {
-               title: 'Aquazul',
+               label: '<Web type="System" charts="analytics" adminPanel />',
+               title: 'AQUAZUL',
                description:
-                  'Sistema integral para operación de lavandería industrial con lógica de negocio compleja: múltiples roles, precios personalizados por cliente, trazabilidad de pedidos y generación de documentación operativa.',
+                  'I brought the rigor of corporate software to the industrial sector. I created a robust administrative panel with multiple roles that controls everything from inventory management and custom orders to critical statistics, allowing for total control of operations in real time.',
             },
             {
-               title: 'Asociación de Pádel',
+               label: '<Web type="System" management="RT" reservationsPanel />',
+               title: 'PADEL ASSOC. MAR DEL PLATA',
                description:
-                  'Plataforma web institucional con funcionalidades de gestión deportiva. Digitaliza la administración de torneos, reservas y organización de jugadores.',
+                  "I digitized one of my city's passions. A comprehensive system designed to automate tournament logistics and real-time reservations, improving the community's experience and simplifying end-to-end administrative operations.",
             },
             {
+               label: '<Web type="System" management="RT" reservationsPanel />',
                title: 'Full Court',
                description:
-                  'Aplicación de gestión de reservas deportivas con arquitectura modular y escalable. Incluye control de clientes, consumos y validaciones robustas en frontend y backend.',
+                  'My favorite playground. I developed a scalable architecture for total control of sports centers, focused on solving the complexity of reservations and consumptions with a fluid interface and solid business logic.',
             },
          ],
       },
@@ -147,7 +155,7 @@ const dictionary = {
       items: {
          es: [
             {
-               period: '2026 \u2014 Presente',
+               period: '2025 - Presente',
                role: 'Líder Técnico Frontend',
                company: 'Accenture - Client: Banco Galicia',
                description:
@@ -155,7 +163,7 @@ const dictionary = {
                impact: 'Aca podria ir el impacto principal',
             },
             {
-               period: '2024 \u2014 2025',
+               period: '2024 - 2025',
                role: 'Desarrollador Frontend',
                company: 'Accenture - Client: Banco Galicia',
                description:
@@ -163,7 +171,7 @@ const dictionary = {
                impact: 'Aca podria ir el impacto principal',
             },
             {
-               period: '2021 \u2014 2022',
+               period: '2021 - 2022',
                role: 'Desarrollador Salesforce',
                company: 'Accenture - Proyecto Manage my Sales',
                description:
@@ -171,7 +179,7 @@ const dictionary = {
                impact: 'Aca podria ir el impacto principal',
             },
             {
-               period: '2020 \u2014 2021',
+               period: '2020 - 2021',
                role: 'Desarrollador Web',
                company: 'Tember',
                description:
@@ -181,7 +189,7 @@ const dictionary = {
          ],
          en: [
             {
-               period: '2022 \u2014 Present',
+               period: '2025 - Present',
                role: 'Senior Fullstack Engineer',
                company: 'NovaTech Solutions',
                description:
@@ -189,25 +197,25 @@ const dictionary = {
                impact: '35% faster dev cycles',
             },
             {
-               period: '2020 \u2014 2022',
+               period: '2024 - 2025',
                role: 'Fullstack Developer',
-               company: 'DataBridge Corp',
+               company: 'Accenture - Client: Banco Galicia',
                description:
                   'Built internal tools for data pipeline management serving 200+ analysts. Migrated legacy PHP services to a modern Node.js/React stack.',
                impact: '200+ internal users',
             },
             {
-               period: '2018 \u2014 2020',
+               period: '2021 - 2022',
                role: 'Frontend Developer',
-               company: 'PixelCraft Agency',
+               company: 'Accenture - Proyecto Manage my Sales',
                description:
                   'Delivered 20+ client projects across healthcare, fintech, and e-commerce. Established component library and testing standards for the team.',
                impact: '20+ shipped projects',
             },
             {
-               period: '2017 \u2014 2018',
+               period: '2020 - 2021',
                role: 'Web Developer',
-               company: 'StartupLab',
+               company: 'Tember',
                description:
                   'First engineering hire. Built the MVP that secured seed funding. Wore many hats across frontend, backend, and DevOps.',
                impact: 'Seed round secured',

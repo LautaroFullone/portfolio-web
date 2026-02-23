@@ -10,13 +10,16 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({ label, title, description
    return (
       <>
          <p className="font-mono text-sm tracking-widest text-primary uppercase mb-4">
+            <span className="text-xs">{'<'}</span>
+
             <DecryptedText
                text={label}
                animateOn="view"
-               speed={80}
+               speed={100}
                maxIterations={10}
                useOriginalCharsOnly
             />
+            <span className="text-xs">{' />'}</span>
          </p>
 
          <h2 className="font-sans text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance">

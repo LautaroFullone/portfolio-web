@@ -9,7 +9,7 @@ import Image from 'next/image'
 
 export function Projects() {
    const { locale, t } = useI18n()
-   const items = t.projects.items[locale]
+   const projects = t.projects.items[locale]
    const isMobile = useMobile()
 
    return (
@@ -30,7 +30,7 @@ export function Projects() {
                   itemScale={isMobile ? 0.08 : 0.02} //la scala incremental de cada card que hace stack
                   rotationAmount={isMobile ? 0 : 0.9} //la rotacion incremental de cada card que hace stack
                >
-                  {items.map((project, idx) => (
+                  {projects.map((project, idx) => (
                      <ScrollStackItem key={idx} itemClassName="w-full">
                         <article className="group border border-border bg-card overflow-hidden transition-all duration-300 hover:border-primary/50">
                            <div className="flex flex-col lg:flex-row">
@@ -46,10 +46,7 @@ export function Projects() {
                               </div>
 
                               <div className="flex flex-1 flex-col justify-center p-8 lg:p-12">
-                                 <span className="font-mono text-xs text-primary tracking-wider uppercase">
-                                    {project.title}
-                                 </span>
-                                 <div className="mt-3 flex items-start justify-between gap-4">
+                                 <div className="mb-2 flex items-start justify-between gap-4">
                                     <h3 className="text-2xl font-bold text-foreground sm:text-3xl">
                                        {project.title}
                                     </h3>
@@ -58,6 +55,9 @@ export function Projects() {
                                        className="shrink-0 text-muted-foreground transition-all duration-300 group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                                     />
                                  </div>
+                                 <span className="font-mono text-xs text-primary tracking-wider">
+                                    {project.label}
+                                 </span>
                                  <p className="mt-4 text-muted-foreground leading-relaxed">
                                     {project.description}
                                  </p>

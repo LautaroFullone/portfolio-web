@@ -23,6 +23,7 @@ export function Approach() {
                      <div className="flex h-10 w-10 items-center justify-center bg-primary text-primary-foreground">
                         <Building2 size={20} />
                      </div>
+
                      <h3 className="text-lg font-semibold text-foreground">
                         {t.approach.corporateTitle[locale]}
                      </h3>
