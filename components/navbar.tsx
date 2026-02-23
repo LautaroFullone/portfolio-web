@@ -66,7 +66,7 @@ export function Navbar() {
                <div className="flex items-center gap-2">
                   <button
                      onClick={toggleLocale}
-                     className="flex items-center gap-1.5 text-xs font-mono text-muted-foreground hover:text-foreground transition-colors border border-border px-3 py-1.5 hover:border-primary/50"
+                     className="flex items-center gap-1.5 text-xs font-mono text-muted-foreground hover:text-foreground transition-colors border border-border px-3 py-1.5 hover:border-primary/50 cursor-pointer"
                      aria-label={
                         locale === 'es' ? 'Switch to English' : 'Cambiar a Español'
                      }
@@ -74,6 +74,7 @@ export function Navbar() {
                      <Globe size={14} />
                      <span>{locale === 'es' ? 'EN' : 'ES'}</span>
                   </button>
+
                   <ThemeSwitcher />
                </div>
             </div>
