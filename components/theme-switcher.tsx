@@ -38,7 +38,7 @@ export function ThemeSwitcher() {
       <div className="relative" ref={ref}>
          <button
             onClick={() => setOpen(!open)}
-            className="cursor-pointer flex h-8 w-8 items-center justify-center border border-border text-muted-foreground hover:text-foreground hover:border-primary/50 transition-colors"
+            className="cursor-pointer flex  p-1.5 items-center justify-center border border-border text-muted-foreground hover:text-foreground hover:border-primary/50 transition-colors"
             aria-label="Change theme"
             aria-expanded={open}
          >
