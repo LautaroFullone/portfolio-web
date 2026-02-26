@@ -27,7 +27,7 @@ export function Hero() {
                   startOnVisible
                   loop={false}
                   showCursor
-                  typingSpeed={150}
+                  typingSpeed={50}
                   pauseDuration={8000}
                   cursorCharacter="|"
                   cursorClassName="font-normal"

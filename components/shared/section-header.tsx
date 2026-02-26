@@ -16,14 +16,14 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({ label, title, description
                text={label}
                animateOn="view"
                speed={100}
-               maxIterations={10}
+               maxIterations={6}
                useOriginalCharsOnly
             />
             <span className="text-xs">{' />'}</span>
          </p>
 
          <h2 className="font-sans text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance">
-            <DecryptedText text={title} animateOn="view" speed={80} maxIterations={15} />
+            <DecryptedText text={title} animateOn="view" speed={100} maxIterations={7} />
          </h2>
 
          <p className="mt-4 max-w-xl text-muted-foreground leading-relaxed">
