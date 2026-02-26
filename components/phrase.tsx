@@ -59,8 +59,8 @@ export const Phrase = () => {
                <p className="font-mono text-base lg:text-lg text-muted-foreground leading-relaxed max-w-2xl">
                   {locale === 'es' ? (
                      <>
-                        Si buscás un aliado que se comprometa con la visión estratégica de
-                        tu proyecto tanto como vos,{' '}
+                        Si buscas a alguien que se comprometa con la visión estratégica
+                        del proyecto tanto como sus creadores,{' '}
                         <a
                            href="mailto:lautarofullone@gmail.com"
                            className="text-primary hover:text-primary/80 transition-colors tracking-widest font-bold text-base"

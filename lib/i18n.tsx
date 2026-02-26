@@ -1,6 +1,10 @@
 'use client'
 
 import { createContext, useContext, useState, useCallback, type ReactNode } from 'react'
+import silkImage from '@/assets/images/projects/silk-mockup.png'
+import padelMockup from '@/assets/images/projects/padel-mockup.png'
+import aquazulMockup from '@/assets/images/projects/aquazul-mockup.png'
+// import fullCourtMockup from '@/assets/images/projects/full-court-mockup.png'
 
 export type Locale = 'es' | 'en'
 
@@ -97,28 +101,25 @@ const dictionary = {
       items: {
          es: [
             {
-               label: '<Web type="Landing" editor="WYSIWYG" adminPanel />',
-               title: 'SILK',
+               label: '<Web type="Consultoría de Imagen y Estilismo" />',
+               title: 'ESTUDIO SILK',
                description:
-                  'Transformé la visión de la marca en un ecosistema digital completo. Desarrollé un sistema que no solo es una web, sino una herramienta estratégica para gestionar contenidos, automatizar ventas de productos digitales y captar leads de forma eficiente.',
+                  'Transformé la visión de la marca en un ecosistema digital completo. Un sistema que no solo es una web, sino una herramienta estratégica para gestionar contenidos, automatizar ventas de productos digitales y captar leads de forma eficiente.',
+               image: silkImage,
             },
             {
-               label: '<Web type="Landing" payments="MP" tournamentsPanel />',
+               label: '<Web type="Asociación de Jugadores de Padel" />',
                title: 'ASOC. PADEL MAR DEL PLATA',
                description:
-                  'Digitalicé la pasión de mi ciudad. Un sistema integral diseñado para automatizar la logística de torneos y reservas en tiempo real, mejorando la experiencia de la comunidad y simplificando la operatividad administrativa de punta a punta.',
+                  'Digitalicé una de las pasiones de mi ciudad. Un sistema integral diseñado para automatizar la logística de torneos en tiempo real, mejorando la experiencia de la comunidad.',
+               image: padelMockup,
             },
             {
-               label: '<Web type="System" charts="analytics" adminPanel />',
+               label: '<Web type="Lavadero Industrial" />',
                title: 'AQUAZUL',
                description:
-                  'Llevé el rigor del software corporativo al sector industrial. Creé un panel administrativo robusto con multiples roles que controla desde la gestión de inventarios y pedidos personalizados hasta estadísticas críticas, permitiendo un control total de la operativa en tiempo real.',
-            },
-            {
-               label: '<Web type="System" management="RT" reservationsPanel />',
-               title: 'Full Court',
-               description:
-                  'Mi terreno de juego favorito. Desarrollé una arquitectura escalable para el control total de centros deportivos, enfocada en resolver la complejidad de las reservas y consumos con una interfaz fluida y una lógica de negocio sólida.',
+                  'Creé un panel administrativo robusto con multiples roles que controla la gestión de inventarios y pedidos personalizados y estadísticas diarias, permitiendo un control total de la operativa del negocio.',
+               image: aquazulMockup,
             },
          ],
          en: [
@@ -127,24 +128,21 @@ const dictionary = {
                title: 'SILK',
                description:
                   "I transformed the brand's vision into a complete digital ecosystem. I developed a system that is not only a website but a strategic tool for managing content, automating digital product sales, and capturing leads efficiently.",
-            },
-            {
-               label: '<Web type="System" charts="analytics" adminPanel />',
-               title: 'AQUAZUL',
-               description:
-                  'I brought the rigor of corporate software to the industrial sector. I created a robust administrative panel with multiple roles that controls everything from inventory management and custom orders to critical statistics, allowing for total control of operations in real time.',
+               image: silkImage,
             },
             {
                label: '<Web type="System" management="RT" reservationsPanel />',
                title: 'PADEL ASSOC. MAR DEL PLATA',
                description:
                   "I digitized one of my city's passions. A comprehensive system designed to automate tournament logistics and real-time reservations, improving the community's experience and simplifying end-to-end administrative operations.",
+               image: padelMockup,
             },
             {
-               label: '<Web type="System" management="RT" reservationsPanel />',
-               title: 'Full Court',
+               label: '<Web type="System" charts="analytics" adminPanel />',
+               title: 'AQUAZUL',
                description:
-                  'My favorite playground. I developed a scalable architecture for total control of sports centers, focused on solving the complexity of reservations and consumptions with a fluid interface and solid business logic.',
+                  'I brought the rigor of corporate software to the industrial sector. I created a robust administrative panel with multiple roles that controls everything from inventory management and custom orders to critical statistics, allowing for total control of operations in real time.',
+               image: aquazulMockup,
             },
          ],
       },
@@ -156,35 +154,31 @@ const dictionary = {
          es: [
             {
                period: '2025 - Presente',
-               role: 'Líder Técnico Frontend',
+               role: 'Líder Técnico FullStack',
                company: 'Accenture | Cliente: Banco Galicia',
                description:
-                  'Liderando la arquitectura frontend de la plataforma principal. Introduje un sistema de diseño que redujo el tiempo de desarrollo un 35%. Mentoreando un equipo de 5 ingenieros.',
-               impact: 'Aca podria ir el impacto principal',
+                  'Hoy soy referente técnico del flujo de vinculación de cuentas para el Home Banking. Defino la arquitectura y guío a mi equipo en el proceso. Actualemnte contamos con mas de 1 millon de usuarios diarios.',
             },
             {
                period: '2024 - 2025',
-               role: 'Desarrollador Frontend',
+               role: 'Desarrollador FullStack',
                company: 'Accenture | Cliente: Banco Galicia',
                description:
-                  'Liderando la arquitectura frontend de la plataforma principal. Introduje un sistema de diseño que redujo el tiempo de desarrollo un 35%. Mentoreando un equipo de 5 ingenieros.',
-               impact: 'Aca podria ir el impacto principal',
+                  'Participé activamente en el desarrollo del Home Banking para empresas. Me enfoqué en armar un sistema de trabajo que nos permitió avanzar más rápido, actualizando viejas estructuras y acompañando a otros desarrolladores en el proceso.',
             },
             {
-               period: '2021 - 2022',
-               role: 'Desarrollador Salesforce',
-               company: 'Accenture | Proyecto: Manage my Sales',
+               period: '2021 - 2024',
+               role: 'Líder Técnico Salesforce',
+               company: 'Accenture | Proyecto: Manage My Sales',
                description:
-                  'Entregué más de 20 proyectos para clientes en salud, fintech y e-commerce. Establecí una librería de componentes y estándares de testing para el equipo.',
-               impact: 'Aca podria ir el impacto principal',
+                  'Coordiné y desarrollé soluciones técnicas para equipos de todo el mundo, ademas de participar en academias corporativas para capacitar a otros desarrolladores en el uso del CRM. Luego de unos años, decidí rotar hacia el mundo del desarrollo web que es lo que realmente me apasiona.',
             },
             {
                period: '2020 - 2021',
                role: 'Desarrollador Web',
                company: 'Tember',
                description:
-                  'Primera contratación de ingeniería. Construí el MVP que aseguró la ronda semilla. Asumí múltiples roles entre frontend, backend y DevOps.',
-               impact: 'Aca podria ir el impacto principal',
+                  'Fui el primer desarrollador en sumarse al equipo. Me tocó el desafío de construir el MVP desde cero para asegurar el financiamiento del proyecto, ocupándome de todo: frontend, backend y las primeras configuraciones de los servidores.',
             },
          ],
          en: [
@@ -277,8 +271,8 @@ const dictionary = {
       label: { es: 'Contacto', en: 'Contact' },
       title: { es: 'Trabajemos Juntos', en: 'Let\u2019s Work Together' },
       description: {
-         es: '¿Tenés un proyecto en mente o querés conversar sobre oportunidades? Me encantaría saber de vos.',
-         en: 'Have a project in mind or want to discuss opportunities? I\u2019d love to hear from you.',
+         es: '¿Tenés un proyecto en mente o querés conversar sobre oportunidades? No dudes en contactarme.',
+         en: 'Have a project in mind or want to discuss opportunities? Don\u2019t hesitate to contact me.',
       },
       sentTitle: { es: '¡Mensaje enviado!', en: 'Message sent!' },
       sentDescription: {

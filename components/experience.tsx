@@ -114,9 +114,6 @@ function ExperienceItem({ exp }: { exp: any }) {
                <p className="mt-3 text-muted-foreground leading-relaxed">
                   {exp.description}
                </p>
-               <span className="mt-3 inline-block font-mono text-xs bg-primary text-primary-foreground px-3 py-1">
-                  {exp.impact}
-               </span>
             </BlurIn>
          </div>
       </div>
