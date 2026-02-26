@@ -43,7 +43,7 @@ const dictionary = {
       },
       corporateDescription: {
          es: 'Trabajo liderando desarrollos en entornos de alta exigencia y a gran escala. No solo escribo código; guío equipos para asegurar que cada despliegue sea robusto y escalable.',
-         en: 'Leading critical systems with solid architecture, clean code, and robust deployments. Not just writing code, guiding other developers, and ensuring the product scales.',
+         en: 'I lead development in high-demand, large-scale environments. Not just writing code — I guide teams to ensure every deployment is robust and scalable.',
       },
       corporateItems: {
          es: [
@@ -79,7 +79,7 @@ const dictionary = {
       },
       quote: {
          es: '\u201CProgramar es un desafío constante donde siempre encuentro la forma de divertirme.\u201D',
-         en: '\u201CI apply corporate standards and product thinking to every project I build.\u201D',
+         en: '\u201CCoding is a constant challenge where I always find a way to have fun.\u201D',
       },
    },
    technologies: {
@@ -124,24 +124,24 @@ const dictionary = {
          ],
          en: [
             {
-               label: '<Web type="Landing" editor="WYSIWYG" adminPanel />',
-               title: 'SILK',
+               label: '<Web type="Image Consulting & Styling" />',
+               title: 'ESTUDIO SILK',
                description:
-                  "I transformed the brand's vision into a complete digital ecosystem. I developed a system that is not only a website but a strategic tool for managing content, automating digital product sales, and capturing leads efficiently.",
+                  "I transformed the brand's vision into a complete digital ecosystem. A system that is not just a website, but a strategic tool for managing content, automating digital product sales, and capturing leads efficiently.",
                image: silkImage,
             },
             {
-               label: '<Web type="System" management="RT" reservationsPanel />',
+               label: '<Web type="Padel Players Association" />',
                title: 'PADEL ASSOC. MAR DEL PLATA',
                description:
-                  "I digitized one of my city's passions. A comprehensive system designed to automate tournament logistics and real-time reservations, improving the community's experience and simplifying end-to-end administrative operations.",
+                  "I digitized one of my city's passions. A comprehensive system designed to automate tournament logistics in real time, improving the community's experience.",
                image: padelMockup,
             },
             {
-               label: '<Web type="System" charts="analytics" adminPanel />',
+               label: '<Web type="Industrial Laundry" />',
                title: 'AQUAZUL',
                description:
-                  'I brought the rigor of corporate software to the industrial sector. I created a robust administrative panel with multiple roles that controls everything from inventory management and custom orders to critical statistics, allowing for total control of operations in real time.',
+                  'I created a robust administrative panel with multiple roles that controls inventory management, custom orders, and daily statistics — enabling total control over business operations.',
                image: aquazulMockup,
             },
          ],
@@ -184,35 +184,31 @@ const dictionary = {
          en: [
             {
                period: '2025 - Present',
-               role: 'Senior Fullstack Engineer',
-               company: 'NovaTech Solutions',
+               role: 'FullStack Tech Lead',
+               company: 'Accenture | Client: Banco Galicia',
                description:
-                  'Leading frontend architecture for the core product platform. Introduced design system that reduced development time by 35%. Mentoring a team of 5 engineers.',
-               impact: '35% faster dev cycles',
+                  'I am the technical reference for the account-linking flow in Home Banking. I define the architecture and guide my team through the process. We currently serve more than 1 million daily users.',
             },
             {
                period: '2024 - 2025',
-               role: 'Fullstack Developer',
-               company: 'Accenture - Client: Banco Galicia',
+               role: 'FullStack Developer',
+               company: 'Accenture | Client: Banco Galicia',
                description:
-                  'Built internal tools for data pipeline management serving 200+ analysts. Migrated legacy PHP services to a modern Node.js/React stack.',
-               impact: '200+ internal users',
+                  'I actively participated in the development of the Business Home Banking. I focused on building a workflow system that allowed us to move faster, modernizing legacy structures and supporting other developers throughout the process.',
             },
             {
-               period: '2021 - 2022',
-               role: 'Frontend Developer',
-               company: 'Accenture - Proyecto Manage my Sales',
+               period: '2021 - 2024',
+               role: 'Salesforce Tech Lead',
+               company: 'Accenture | Project: Manage My Sales',
                description:
-                  'Delivered 20+ client projects across healthcare, fintech, and e-commerce. Established component library and testing standards for the team.',
-               impact: '20+ shipped projects',
+                  'I coordinated and developed technical solutions for global teams, and participated in corporate academies to train other developers in CRM usage. After a few years, I transitioned to web development — which is what I am truly passionate about.',
             },
             {
                period: '2020 - 2021',
                role: 'Web Developer',
                company: 'Tember',
                description:
-                  'First engineering hire. Built the MVP that secured seed funding. Wore many hats across frontend, backend, and DevOps.',
-               impact: 'Seed round secured',
+                  'I was the first developer to join the team. I took on the challenge of building the MVP from scratch to secure project funding, handling everything: frontend, backend, and the initial server configuration.',
             },
          ],
       },
