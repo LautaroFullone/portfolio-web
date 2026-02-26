@@ -125,7 +125,7 @@ const dictionary = {
          en: [
             {
                label: '<Web type="Image Consulting & Styling" />',
-               title: 'ESTUDIO SILK',
+               title: 'SILK STUDIO ',
                description:
                   "I transformed the brand's vision into a complete digital ecosystem. A system that is not just a website, but a strategic tool for managing content, automating digital product sales, and capturing leads efficiently.",
                image: silkImage,

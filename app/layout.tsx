@@ -48,7 +48,7 @@ export default function RootLayout({
          <body className="font-mono antialiased">
             <ThemeProvider
                attribute="class"
-               defaultTheme="dark"
+               defaultTheme="system"
                enableSystem
                disableTransitionOnChange
             >
