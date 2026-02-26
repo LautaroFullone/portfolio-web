@@ -103,6 +103,7 @@ const dictionary = {
             {
                label: '<Web type="Consultoría de Imagen y Estilismo" />',
                title: 'ESTUDIO SILK',
+               url: 'https://estudiosilk.com',
                description:
                   'Transformé la visión de la marca en un ecosistema digital completo. Un sistema que no solo es una web, sino una herramienta estratégica para gestionar contenidos, automatizar ventas de productos digitales y captar leads de forma eficiente.',
                image: silkImage,
@@ -110,6 +111,7 @@ const dictionary = {
             {
                label: '<Web type="Asociación de Jugadores de Padel" />',
                title: 'ASOC. PADEL MAR DEL PLATA',
+               url: 'https://padel-mardelplata.vercel.app/',
                description:
                   'Digitalicé una de las pasiones de mi ciudad. Un sistema integral diseñado para automatizar la logística de torneos en tiempo real, mejorando la experiencia de la comunidad.',
                image: padelMockup,
@@ -117,6 +119,7 @@ const dictionary = {
             {
                label: '<Web type="Lavadero Industrial" />',
                title: 'AQUAZUL',
+               url: 'https://aquazul-lavadero.com',
                description:
                   'Creé un panel administrativo robusto con multiples roles que controla la gestión de inventarios y pedidos personalizados y estadísticas diarias, permitiendo un control total de la operativa del negocio.',
                image: aquazulMockup,
@@ -124,8 +127,9 @@ const dictionary = {
          ],
          en: [
             {
-               label: '<Web type="Image Consulting & Styling" />',
-               title: 'SILK STUDIO ',
+               label: '<Web type="Image Consulting &amp; Styling" />',
+               title: 'ESTUDIO SILK',
+               url: 'https://estudiosilk.com',
                description:
                   "I transformed the brand's vision into a complete digital ecosystem. A system that is not just a website, but a strategic tool for managing content, automating digital product sales, and capturing leads efficiently.",
                image: silkImage,
@@ -133,6 +137,7 @@ const dictionary = {
             {
                label: '<Web type="Padel Players Association" />',
                title: 'PADEL ASSOC. MAR DEL PLATA',
+               url: 'https://padel-mardelplata.vercel.app/',
                description:
                   "I digitized one of my city's passions. A comprehensive system designed to automate tournament logistics in real time, improving the community's experience.",
                image: padelMockup,
@@ -140,6 +145,7 @@ const dictionary = {
             {
                label: '<Web type="Industrial Laundry" />',
                title: 'AQUAZUL',
+               url: 'https://aquazul-lavadero.com',
                description:
                   'I created a robust administrative panel with multiple roles that controls inventory management, custom orders, and daily statistics — enabling total control over business operations.',
                image: aquazulMockup,
