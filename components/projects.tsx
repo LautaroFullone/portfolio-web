@@ -29,7 +29,8 @@ export function Projects() {
                   itemStackDistance={20}
                   baseScale={isMobile ? 0.8 : 0.95}
                   itemScale={isMobile ? 0.08 : 0.02}
-                  rotationAmount={isMobile ? 0 : 0.9}
+                  // rotationAmount={isMobile ? 0 : 0.9}
+                  blurAmount={2}
                >
                   {projects.map((project, idx) => {
                      const imageSrc =
