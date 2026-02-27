@@ -1,6 +1,12 @@
 'use client'
 
-import { ArrowDown, Github, Linkedin } from 'lucide-react'
+import { ArrowDown, Github, Linkedin, Download, ChevronDown } from 'lucide-react'
+import {
+   DropdownMenu,
+   DropdownMenuContent,
+   DropdownMenuItem,
+   DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
 import TextType from './ui/react-bits/TextType'
 import { useI18n } from '@/lib/i18n'
 import Image from 'next/image'
@@ -15,12 +21,12 @@ export function Hero() {
          <div className="mx-auto w-full max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center mb-10 lg:mb-0">
             {/* Text Content */}
             <div className="flex flex-col items-start z-10 w-full lg:col-span-8">
-               {/* <div className="flex items-center gap-2 mb-8">
+               <div className="flex items-center gap-2 mb-8">
                   <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
                   <span className="font-mono text-xs text-muted-foreground tracking-wider uppercase">
                      {t.hero.available[locale]}
                   </span>
-               </div> */}
+               </div>
 
                <TextType
                   as="h1"
@@ -48,20 +54,51 @@ export function Hero() {
                   {t.hero.subtitle[locale]}
                </p>
 
-               <div className="mt-10 flex flex-wrap items-center gap-4">
-                  <a
-                     href="#projects"
-                     className="inline-flex items-center justify-center bg-foreground text-background px-6 py-3 text-sm font-medium transition-colors hover:bg-foreground/90"
-                  >
-                     {t.hero.viewProjects[locale]}
-                  </a>
-                  {/* <a
-                     href="#contact"
-                     className="inline-flex items-center justify-center border border-border bg-transparent px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
-                  >
-                     {t.hero.contact[locale]}
-                  </a> */}
-                  <div className="flex items-center gap-3 ml-2">
+               <div className="mt-8 flex flex-col sm:flex-row items-center sm:items-start lg:items-center gap-6 sm:gap-4 w-full sm:w-auto">
+                  <div className="flex w-full sm:w-auto flex-row items-center justify-center sm:justify-start gap-4">
+                     <a
+                        href="#projects"
+                        className="inline-flex flex-1 sm:flex-none items-center justify-center bg-foreground text-background px-4 sm:px-6 py-3 text-sm font-medium transition-colors hover:bg-foreground/90 whitespace-nowrap"
+                     >
+                        {t.hero.viewProjects[locale]}
+                     </a>
+
+                     <DropdownMenu>
+                        <DropdownMenuTrigger className="cursor-pointer inline-flex flex-1 sm:flex-none items-center justify-center border border-border bg-transparent px-4 sm:px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary gap-2 outline-none whitespace-nowrap">
+                           <Download size={16} />
+                           {t.hero.downloadCV[locale]}
+                           <ChevronDown size={14} className="opacity-50" />
+                        </DropdownMenuTrigger>
+
+                        <DropdownMenuContent align="center" className="w-[150px]">
+                           <DropdownMenuItem asChild>
+                              <a
+                                 href="/cv/CV 2026 Español.pdf"
+                                 download
+                                 target="_blank"
+                                 rel="noopener noreferrer"
+                                 className="cursor-pointer w-full"
+                              >
+                                 Español
+                              </a>
+                           </DropdownMenuItem>
+
+                           <DropdownMenuItem asChild>
+                              <a
+                                 href="/cv/CV 2026 English.pdf"
+                                 download
+                                 target="_blank"
+                                 rel="noopener noreferrer"
+                                 className="cursor-pointer w-full"
+                              >
+                                 English
+                              </a>
+                           </DropdownMenuItem>
+                        </DropdownMenuContent>
+                     </DropdownMenu>
+                  </div>
+
+                  <div className="flex items-center justify-center gap-4 sm:ml-2">
                      <a
                         href="https://github.com"
                         target="_blank"
@@ -71,6 +108,7 @@ export function Hero() {
                      >
                         <Github size={20} />
                      </a>
+
                      <a
                         href="https://linkedin.com"
                         target="_blank"

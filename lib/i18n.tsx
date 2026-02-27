@@ -26,7 +26,9 @@ const dictionary = {
          es: 'Disponible para trabajar',
          en: 'Available for work',
       },
+      experience: { es: 'Experiencia', en: 'Experience' },
       viewProjects: { es: 'Ver Proyectos', en: 'View Projects' },
+      downloadCV: { es: 'Descargar CV', en: 'Download CV' },
       contact: { es: 'Contacto', en: 'Contact' },
       scroll: { es: 'Bajar', en: 'Scroll' },
       scrollAriaLabel: {
