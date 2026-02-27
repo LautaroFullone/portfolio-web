@@ -60,7 +60,7 @@ const rawTechnologies: TechIconProps[] = [
    { name: 'Java', icon: javaIcon },
    { name: 'JavaScript', icon: javascriptIcon },
    { name: 'Laravel', icon: laravelIcon },
-   { name: 'Mercado Pago', icon: mercadoPagoIcon },
+   // { name: 'Mercado Pago', icon: mercadoPagoIcon },
    { name: 'n8n', icon: n8nIcon },
    { name: 'NestJS', icon: nestjsIcon },
    { name: 'Next.js', icon: nextjsIconDark },
