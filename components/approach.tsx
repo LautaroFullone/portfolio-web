@@ -34,7 +34,7 @@ export function Approach() {
                      <DecryptedText
                         text={t.approach.corporateDescription[locale]}
                         animateOn="both"
-                        speed={80}
+                        speed={60}
                         maxIterations={6}
                         useOriginalCharsOnly
                      />
@@ -50,8 +50,8 @@ export function Approach() {
                            <DecryptedText
                               text={item}
                               animateOn="both"
-                              speed={80}
-                              maxIterations={8}
+                              speed={60}
+                              maxIterations={7}
                               useOriginalCharsOnly
                            />
                         </li>
@@ -75,7 +75,7 @@ export function Approach() {
                      <DecryptedText
                         text={t.approach.independentDescription[locale]}
                         animateOn="both"
-                        speed={80}
+                        speed={60}
                         maxIterations={6}
                         useOriginalCharsOnly
                      />
@@ -91,8 +91,8 @@ export function Approach() {
                            <DecryptedText
                               text={item}
                               animateOn="both"
-                              speed={80}
-                              maxIterations={8}
+                              speed={60}
+                              maxIterations={7}
                               useOriginalCharsOnly
                            />
                         </li>

@@ -1,9 +1,9 @@
 'use client'
 
 import { createContext, useContext, useState, useCallback, type ReactNode } from 'react'
-import silkImage from '@/assets/images/projects/silk-mockup.png'
-import padelMockup from '@/assets/images/projects/padel-mockup.png'
-import aquazulMockup from '@/assets/images/projects/aquazul-mockup.png'
+import silkImage from '@/assets/images/projects/silk-mockup.webp'
+import padelMockup from '@/assets/images/projects/padel-mockup.webp'
+import aquazulMockup from '@/assets/images/projects/aquazul-mockup.webp'
 // import fullCourtMockup from '@/assets/images/projects/full-court-mockup.png'
 
 export type Locale = 'es' | 'en'
