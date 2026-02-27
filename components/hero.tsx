@@ -28,8 +28,9 @@ export function Hero() {
                   </span>
                </div>
 
+               <h1 className="sr-only">Lautaro Fullone</h1>
                <TextType
-                  as="h1"
+                  as="h2"
                   text="Lautaro Fullone"
                   startOnVisible
                   loop={false}
