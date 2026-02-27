@@ -165,7 +165,7 @@ const dictionary = {
                role: 'Líder Técnico FullStack',
                company: 'Accenture | Cliente: Banco Galicia',
                description:
-                  'Hoy soy referente técnico del flujo de vinculación de cuentas para el Home Banking. Defino la arquitectura y guío a mi equipo en el proceso. Actualemnte contamos con mas de 1 millon de usuarios diarios.',
+                  'Hoy soy referente técnico del flujo de vinculación de cuentas para el Home Banking. Defino la arquitectura y guío a mi equipo en el proceso. Actualemnte contamos con más de 1 millon de usuarios diarios.',
             },
             {
                period: '2024 - 2025',
@@ -179,7 +179,7 @@ const dictionary = {
                role: 'Líder Técnico Salesforce',
                company: 'Accenture | Proyecto: Manage My Sales',
                description:
-                  'Coordiné y desarrollé soluciones técnicas para equipos de todo el mundo, ademas de participar en academias corporativas para capacitar a otros desarrolladores en el uso del CRM. Luego de unos años, decidí rotar hacia el mundo del desarrollo web que es lo que realmente me apasiona.',
+                  'Coordiné y desarrollé soluciones técnicas para equipos de todo el mundo, además de participar en academias corporativas para capacitar a otros desarrolladores en el uso del CRM. Luego de unos años, decidí rotar hacia el mundo del desarrollo web que es lo que realmente me apasiona.',
             },
             {
                period: '2020 - 2021',
