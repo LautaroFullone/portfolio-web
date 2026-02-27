@@ -5,6 +5,7 @@ import TextType from './ui/react-bits/TextType'
 import { useI18n } from '@/lib/i18n'
 import Image from 'next/image'
 import { useMobile } from '@/hooks/use-mobile'
+import meImage from '@/assets/images/me-cool.webp'
 
 export function Hero() {
    const { locale, t } = useI18n()
@@ -90,10 +91,10 @@ export function Hero() {
 
                <div className="relative w-56 h-56 sm:w-80 sm:h-80 lg:w-[440px] lg:h-[440px]">
                   <Image
-                     src="/dev-saludando.png"
-                     alt="Lautaro saludando"
+                     src={meImage}
+                     alt="Lautaro Fullone"
                      fill
-                     className="object-contain drop-shadow-2xl transition-transform duration-700 hover:scale-[1.03] hover:-rotate-1"
+                     className="object-cover rounded-full drop-shadow-2xl transition-all duration-700 hover:scale-[1.03] hover:-rotate-1 "
                      priority
                   />
                </div>
