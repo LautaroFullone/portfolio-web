@@ -52,7 +52,7 @@ export function Contact() {
                      </h3>
                      <div className="flex gap-4">
                         <a
-                           href="https://github.com"
+                           href="https://github.com/LautaroFullone"
                            target="_blank"
                            rel="noopener noreferrer"
                            aria-label="GitHub"
@@ -61,7 +61,7 @@ export function Contact() {
                            <Github size={20} />
                         </a>
                         <a
-                           href="https://linkedin.com"
+                           href="https://www.linkedin.com/in/lautaro-fullone-77320a197/"
                            target="_blank"
                            rel="noopener noreferrer"
                            aria-label="LinkedIn"
