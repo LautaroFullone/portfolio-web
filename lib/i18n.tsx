@@ -165,7 +165,7 @@ const dictionary = {
                role: 'Líder Técnico FullStack',
                company: 'Accenture | Cliente: Banco Galicia',
                description:
-                  'Hoy soy referente técnico del flujo de vinculación de cuentas para el Home Banking. Defino la arquitectura y guío a mi equipo en el proceso. Actualemnte contamos con miles de usuarios diarios.',
+                  'Hoy soy referente técnico del flujo de vinculación de cuentas para el Home Banking. Defino la arquitectura y guío a mi equipo en el proceso. Actualmente contamos con miles de usuarios diarios.',
             },
             {
                period: '2024 - 2025',
