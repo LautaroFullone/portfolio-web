@@ -28,7 +28,7 @@ export const Phrase = () => {
          className="relative w-full overflow-hidden border-y border-border bg-muted/20"
       >
          {/* Subtle grain texture overlay */}
-         <div className="pointer-events-none absolute inset-0 mix-blend-overlay opacity-50 bg-[url('/noise.webp')]" />
+         <div className="pointer-events-none absolute inset-0 mix-blend-overlay opacity-50" />
 
          <div className="mx-auto w-full max-w-4xl px-6 py-28 lg:py-40 relative z-10 flex flex-col justify-center">
             <div
