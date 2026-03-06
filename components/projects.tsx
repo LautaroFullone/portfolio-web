@@ -2,11 +2,11 @@
 
 import ScrollStack, { ScrollStackItem } from './ui/react-bits/ScrollStack'
 import SectionHeader from './shared/section-header'
+import type { StaticImageData } from 'next/image'
 import { useMobile } from '@/hooks/use-mobile'
 import { ArrowUpRight } from 'lucide-react'
 import { useI18n } from '@/lib/i18n'
 import Image from 'next/image'
-import type { StaticImageData } from 'next/image'
 
 export function Projects() {
    const { locale, t } = useI18n()

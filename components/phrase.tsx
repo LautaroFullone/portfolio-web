@@ -25,7 +25,7 @@ export const Phrase = () => {
    return (
       <section
          ref={ref}
-         className="relative w-full overflow-hidden border-y border-border bg-muted/20"
+         className="relative w-full overflow-hidden border-y border-border"
       >
          {/* Subtle grain texture overlay */}
          <div className="pointer-events-none absolute inset-0 mix-blend-overlay opacity-50" />
