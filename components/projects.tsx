@@ -57,6 +57,7 @@ export function Projects() {
                                     }
                                     alt={project.title}
                                     fill
+                                    sizes="(max-width: 768px) 100vw, 60vw"
                                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-102"
                                  />
                               </div>

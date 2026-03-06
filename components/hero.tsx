@@ -143,6 +143,7 @@ export function Hero() {
                      src={meImage}
                      alt="Lautaro Fullone"
                      fill
+                     sizes="(max-width: 640px) 224px, (max-width: 1024px) 320px, 440px"
                      className="object-cover rounded-full drop-shadow-2xl transition-all duration-700 hover:scale-[1.03] hover:-rotate-1 "
                      priority
                   />

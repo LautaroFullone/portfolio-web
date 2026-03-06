@@ -43,6 +43,7 @@ export function Navbar() {
                   alt="dev.portfolio"
                   width={44}
                   height={44}
+                  priority
                   className="rounded-lg drop-shadow-sm transition-opacity group-hover:opacity-90"
                />
             </a>

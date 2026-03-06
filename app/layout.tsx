@@ -21,12 +21,33 @@ const jetbrainsMono = localFont({
 })
 
 export const metadata: Metadata = {
-   title: 'Lautaro Fullone',
+   title: 'Lautaro Fullone | Desarrollador Fullstack',
    description:
       'Desarrollador Fullstack especializado en React, TypeScript, Node.js y tecnologías web modernas. Construyendo aplicaciones corporativas y productos independientes.',
+   metadataBase: new URL('https://lautarofullone.dev'),
+   alternates: {
+      canonical: '/',
+   },
+   openGraph: {
+      title: 'Lautaro Fullone | Desarrollador Fullstack',
+      description:
+         'Desarrollador Fullstack especializado en React, TypeScript, Node.js y tecnologías web modernas.',
+      url: 'https://lautarofullone.dev',
+      siteName: 'Lautaro Fullone',
+      locale: 'es_AR',
+      type: 'website',
+   },
+   robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+         index: true,
+         follow: true,
+      },
+   },
    icons: {
-      icon: '/dev-icon.png',
-      apple: '/dev-icon.png',
+      icon: [{ url: '/dev-icon.webp', type: 'image/webp' }],
+      apple: [{ url: '/dev-icon.webp', type: 'image/webp' }],
    },
 }
 
@@ -35,6 +56,8 @@ export const viewport: Viewport = {
       { media: '(prefers-color-scheme: dark)', color: '#1c1917' },
       { media: '(prefers-color-scheme: light)', color: '#fafaf9' },
    ],
+   width: 'device-width',
+   initialScale: 1,
 }
 
 export default function RootLayout({

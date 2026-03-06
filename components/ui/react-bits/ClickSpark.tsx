@@ -32,7 +32,7 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
 }) => {
    const canvasRef = useRef<HTMLCanvasElement>(null)
    const sparksRef = useRef<Spark[]>([])
-   const startTimeRef = useRef<number | null>(null)
+   const animationIdRef = useRef<number | null>(null)
 
    useEffect(() => {
       const canvas = canvasRef.current
@@ -83,25 +83,18 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
       [easing]
    )
 
-   useEffect(() => {
-      const canvas = canvasRef.current
-      if (!canvas) return
-      const ctx = canvas.getContext('2d')
-      if (!ctx) return
+   const draw = useCallback(
+      (timestamp: number) => {
+         const canvas = canvasRef.current
+         if (!canvas) return
+         const ctx = canvas.getContext('2d')
+         if (!ctx) return
 
-      let animationId: number
-
-      const draw = (timestamp: number) => {
-         if (!startTimeRef.current) {
-            startTimeRef.current = timestamp
-         }
-         ctx?.clearRect(0, 0, canvas.width, canvas.height)
+         ctx.clearRect(0, 0, canvas.width, canvas.height)
 
          sparksRef.current = sparksRef.current.filter((spark: Spark) => {
             const elapsed = timestamp - spark.startTime
-            if (elapsed >= duration) {
-               return false
-            }
+            if (elapsed >= duration) return false
 
             const progress = elapsed / duration
             const eased = easeFunc(progress)
@@ -124,15 +117,24 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
             return true
          })
 
-         animationId = requestAnimationFrame(draw)
-      }
+         // Solo continúa el loop si quedan sparks activos
+         if (sparksRef.current.length > 0) {
+            animationIdRef.current = requestAnimationFrame(draw)
+         } else {
+            animationIdRef.current = null
+         }
+      },
+      [sparkColor, sparkSize, sparkRadius, duration, easeFunc, extraScale]
+   )
 
-      animationId = requestAnimationFrame(draw)
-
+   // Cleanup al desmontar
+   useEffect(() => {
       return () => {
-         cancelAnimationFrame(animationId)
+         if (animationIdRef.current !== null) {
+            cancelAnimationFrame(animationIdRef.current)
+         }
       }
-   }, [sparkColor, sparkSize, sparkRadius, sparkCount, duration, easeFunc, extraScale])
+   }, [])
 
    const handleClick = (e: React.MouseEvent<HTMLDivElement>): void => {
       const canvas = canvasRef.current
@@ -150,6 +152,11 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
       }))
 
       sparksRef.current.push(...newSparks)
+
+      // Solo inicia el loop si no está corriendo ya
+      if (animationIdRef.current === null) {
+         animationIdRef.current = requestAnimationFrame(draw)
+      }
    }
 
    return (
