@@ -1,207 +1,175 @@
-import { useEffect, useState, useRef } from 'react';
-import { motion } from 'motion/react';
-import type { HTMLMotionProps } from 'motion/react';
+'use client'
 
-interface DecryptedTextProps extends HTMLMotionProps<'span'> {
-  text: string;
-  speed?: number;
-  maxIterations?: number;
-  sequential?: boolean;
-  revealDirection?: 'start' | 'end' | 'center';
-  useOriginalCharsOnly?: boolean;
-  characters?: string;
-  className?: string;
-  encryptedClassName?: string;
-  parentClassName?: string;
-  animateOn?: 'view' | 'hover' | 'both';
+import { useEffect, useRef } from 'react'
+
+interface DecryptedTextProps {
+   text: string
+   speed?: number
+   maxIterations?: number
+   useOriginalCharsOnly?: boolean
+   characters?: string
+   className?: string
+   encryptedClassName?: string
+   parentClassName?: string
+   animateOn?: 'view' | 'hover' | 'both'
 }
 
 export default function DecryptedText({
-  text,
-  speed = 50,
-  maxIterations = 10,
-  sequential = false,
-  revealDirection = 'start',
-  useOriginalCharsOnly = false,
-  characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+',
-  className = '',
-  parentClassName = '',
-  encryptedClassName = '',
-  animateOn = 'hover',
-  ...props
+   text,
+   speed = 50,
+   maxIterations = 10,
+   useOriginalCharsOnly = false,
+   characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+',
+   className = '',
+   encryptedClassName = '',
+   parentClassName = '',
+   animateOn = 'hover',
 }: DecryptedTextProps) {
-  const [displayText, setDisplayText] = useState<string>(text);
-  const [isHovering, setIsHovering] = useState<boolean>(false);
-  const [isScrambling, setIsScrambling] = useState<boolean>(false);
-  const [revealedIndices, setRevealedIndices] = useState<Set<number>>(new Set());
-  const [hasAnimated, setHasAnimated] = useState<boolean>(false);
-  const containerRef = useRef<HTMLSpanElement>(null);
+   const containerRef = useRef<HTMLSpanElement>(null) // maneja hover + observer
+   const textRef = useRef<HTMLSpanElement>(null) // mutado directamente
+   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
+   const hasAnimatedRef = useRef(false) // ref, no state — no dispara re-render
 
-  useEffect(() => {
-    let interval: ReturnType<typeof setInterval>;
-    let currentIteration = 0;
+   useEffect(() => {
+      const container = containerRef.current
+      const textEl = textRef.current
+      if (!container || !textEl) return
 
-    const getNextIndex = (revealedSet: Set<number>): number => {
-      const textLength = text.length;
-      switch (revealDirection) {
-        case 'start':
-          return revealedSet.size;
-        case 'end':
-          return textLength - 1 - revealedSet.size;
-        case 'center': {
-          const middle = Math.floor(textLength / 2);
-          const offset = Math.floor(revealedSet.size / 2);
-          const nextIndex = revealedSet.size % 2 === 0 ? middle + offset : middle - offset - 1;
+      // En mobile (touch devices): sin scramble — fade-in CSS puro (GPU, cero JS thread)
+      const isTouchDevice = window.matchMedia('(hover: none)').matches
+      const prefersReducedMotion = window.matchMedia(
+         '(prefers-reduced-motion: reduce)'
+      ).matches
 
-          if (nextIndex >= 0 && nextIndex < textLength && !revealedSet.has(nextIndex)) {
-            return nextIndex;
-          }
-          for (let i = 0; i < textLength; i++) {
-            if (!revealedSet.has(i)) return i;
-          }
-          return 0;
-        }
-        default:
-          return revealedSet.size;
+      if (isTouchDevice || prefersReducedMotion) {
+         textEl.style.opacity = '0'
+         textEl.textContent = text
+         if (className) textEl.className = className
+
+         const obs = new IntersectionObserver(
+            ([entry]) => {
+               if (entry.isIntersecting) {
+                  textEl.style.transition = 'opacity 0.5s ease'
+                  textEl.style.opacity = '1'
+                  obs.disconnect()
+               }
+            },
+            { threshold: 0.2 }
+         )
+         obs.observe(container)
+         return () => obs.disconnect()
       }
-    };
 
-    const availableChars = useOriginalCharsOnly
-      ? Array.from(new Set(text.split(''))).filter(char => char !== ' ')
-      : characters.split('');
+      // Chars disponibles — calculados una sola vez al montar
+      const availableChars = useOriginalCharsOnly
+         ? Array.from(new Set(text.split(''))).filter((c) => c !== ' ')
+         : characters.split('')
 
-    const shuffleText = (originalText: string, currentRevealed: Set<number>): string => {
-      if (useOriginalCharsOnly) {
-        const positions = originalText.split('').map((char, i) => ({
-          char,
-          isSpace: char === ' ',
-          index: i,
-          isRevealed: currentRevealed.has(i)
-        }));
+      // Genera un carácter random de scramble para la posición i
+      const randomChar = () =>
+         availableChars[Math.floor(Math.random() * availableChars.length)]
 
-        const nonSpaceChars = positions.filter(p => !p.isSpace && !p.isRevealed).map(p => p.char);
+      // Genera el texto scrambleado completo en una sola pasada
+      const scrambledText = () =>
+         text
+            .split('')
+            .map((char) => (char === ' ' ? ' ' : randomChar()))
+            .join('')
 
-        for (let i = nonSpaceChars.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [nonSpaceChars[i], nonSpaceChars[j]] = [nonSpaceChars[j], nonSpaceChars[i]];
-        }
+      /** Lanza la animación de scramble. Sin setState, sin re-renders. */
+      const play = () => {
+         if (intervalRef.current) clearInterval(intervalRef.current)
 
-        let charIndex = 0;
-        return positions
-          .map(p => {
-            if (p.isSpace) return ' ';
-            if (p.isRevealed) return originalText[p.index];
-            return nonSpaceChars[charIndex++];
-          })
-          .join('');
-      } else {
-        return originalText
-          .split('')
-          .map((char, i) => {
-            if (char === ' ') return ' ';
-            if (currentRevealed.has(i)) return originalText[i];
-            return availableChars[Math.floor(Math.random() * availableChars.length)];
-          })
-          .join('');
-      }
-    };
+         let iteration = 0
 
-    if (isHovering) {
-      setIsScrambling(true);
-      interval = setInterval(() => {
-        setRevealedIndices(prevRevealed => {
-          if (sequential) {
-            if (prevRevealed.size < text.length) {
-              const nextIndex = getNextIndex(prevRevealed);
-              const newRevealed = new Set(prevRevealed);
-              newRevealed.add(nextIndex);
-              setDisplayText(shuffleText(text, newRevealed));
-              return newRevealed;
+         // Aplicar clase "encriptada" — mutación directa
+         if (encryptedClassName) textEl.className = encryptedClassName
+
+         intervalRef.current = setInterval(() => {
+            iteration++
+
+            if (iteration >= maxIterations) {
+               // Fin del scramble — restaurar texto real
+               clearInterval(intervalRef.current!)
+               intervalRef.current = null
+               textEl.textContent = text
+               textEl.className = className
             } else {
-              clearInterval(interval);
-              setIsScrambling(false);
-              return prevRevealed;
+               // Scramble frame — mutación directa, React no se entera
+               textEl.textContent = scrambledText()
             }
-          } else {
-            setDisplayText(shuffleText(text, prevRevealed));
-            currentIteration++;
-            if (currentIteration >= maxIterations) {
-              clearInterval(interval);
-              setIsScrambling(false);
-              setDisplayText(text);
-            }
-            return prevRevealed;
-          }
-        });
-      }, speed);
-    } else {
-      setDisplayText(text);
-      setRevealedIndices(new Set());
-      setIsScrambling(false);
-    }
+         }, speed)
+      }
 
-    return () => {
-      if (interval) clearInterval(interval);
-    };
-  }, [isHovering, text, speed, maxIterations, sequential, revealDirection, characters, useOriginalCharsOnly]);
+      /** Cancela la animación y restaura el texto original. */
+      const reset = () => {
+         if (intervalRef.current) {
+            clearInterval(intervalRef.current)
+            intervalRef.current = null
+         }
+         textEl.textContent = text
+         textEl.className = className
+      }
 
-  useEffect(() => {
-    if (animateOn !== 'view' && animateOn !== 'both') return;
+      // ── Hover ────────────────────────────────────────────────────────────────
+      if (animateOn === 'hover' || animateOn === 'both') {
+         container.addEventListener('mouseenter', play)
+         container.addEventListener('mouseleave', reset)
+      }
 
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !hasAnimated) {
-          setIsHovering(true);
-          setHasAnimated(true);
-        }
-      });
-    };
+      // ── IntersectionObserver ─────────────────────────────────────────────────
+      let observer: IntersectionObserver | undefined
+      if (animateOn === 'view' || animateOn === 'both') {
+         observer = new IntersectionObserver(
+            (entries) => {
+               for (const entry of entries) {
+                  if (entry.isIntersecting && !hasAnimatedRef.current) {
+                     hasAnimatedRef.current = true
+                     play()
+                     observer!.disconnect() // solo dispara una vez
+                  }
+               }
+            },
+            { threshold: 0.2 }
+         )
+         observer.observe(container)
+      }
 
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
-    };
+      // ── Cleanup ──────────────────────────────────────────────────────────────
+      return () => {
+         if (intervalRef.current) clearInterval(intervalRef.current)
+         observer?.disconnect()
+         container.removeEventListener('mouseenter', play)
+         container.removeEventListener('mouseleave', reset)
+      }
+      // El array de dependencias incluye solo valores que no cambian en runtime.
+      // Si text cambia (i18n), el efecto se re-ejecuta limpiando el timer anterior.
+   }, [
+      text,
+      speed,
+      maxIterations,
+      characters,
+      className,
+      encryptedClassName,
+      animateOn,
+      useOriginalCharsOnly,
+   ])
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-    const currentRef = containerRef.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
+   return (
+      <span
+         ref={containerRef}
+         className={`inline-block whitespace-pre-wrap ${parentClassName}`}
+      >
+         <span className="sr-only">{text}</span>
 
-    return () => {
-      if (currentRef) observer.unobserve(currentRef);
-    };
-  }, [animateOn, hasAnimated]);
-
-  const hoverProps =
-    animateOn === 'hover' || animateOn === 'both'
-      ? {
-          onMouseEnter: () => setIsHovering(true),
-          onMouseLeave: () => setIsHovering(false)
-        }
-      : {};
-
-  return (
-    <motion.span
-      ref={containerRef}
-      className={`inline-block whitespace-pre-wrap ${parentClassName}`}
-      {...hoverProps}
-      {...props}
-    >
-      <span className="sr-only">{displayText}</span>
-
-      <span aria-hidden="true">
-        {displayText.split('').map((char, index) => {
-          const isRevealedOrDone = revealedIndices.has(index) || !isScrambling || !isHovering;
-
-          return (
-            <span key={index} className={isRevealedOrDone ? className : encryptedClassName}>
-              {char}
-            </span>
-          );
-        })}
+         {/*
+            React renderiza este span UNA SOLA VEZ con el texto real.
+            Después de montar, solo el setInterval del useEffect lo toca.
+            className y textContent se mutan directamente vía textRef.
+         */}
+         <span aria-hidden="true" ref={textRef} className={className}>
+            {text}
+         </span>
       </span>
-    </motion.span>
-  );
+   )
 }

@@ -1,12 +1,14 @@
 'use client'
 
-import { Building2, Rocket } from 'lucide-react'
-import { useI18n } from '@/lib/i18n'
 import DecryptedText from './ui/react-bits/DecryptedText'
 import SectionHeader from './shared/section-header'
+import { Building2, Rocket } from 'lucide-react'
+import { useMobile } from '@/hooks/use-mobile'
+import { useI18n } from '@/lib/i18n'
 
 export function Approach() {
    const { locale, t } = useI18n()
+   const isMobile = useMobile()
 
    return (
       <section id="approach" className="px-6 py-28 lg:py-36">
@@ -30,14 +32,17 @@ export function Approach() {
                   </div>
 
                   <p className="text-muted-foreground leading-relaxed">
-                     {/* {t.approach.corporateDescription[locale]} */}
-                     <DecryptedText
-                        text={t.approach.corporateDescription[locale]}
-                        animateOn="both"
-                        speed={60}
-                        maxIterations={6}
-                        useOriginalCharsOnly
-                     />
+                     {isMobile ? (
+                        t.approach.corporateDescription[locale]
+                     ) : (
+                        <DecryptedText
+                           text={t.approach.corporateDescription[locale]}
+                           animateOn="both"
+                           speed={40}
+                           maxIterations={6}
+                           useOriginalCharsOnly
+                        />
+                     )}
                   </p>
 
                   <ul className="mt-6 space-y-3">
@@ -47,13 +52,18 @@ export function Approach() {
                            className="flex items-start gap-3 text-sm text-muted-foreground"
                         >
                            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 bg-primary" />
-                           <DecryptedText
-                              text={item}
-                              animateOn="both"
-                              speed={60}
-                              maxIterations={7}
-                              useOriginalCharsOnly
-                           />
+
+                           {isMobile ? (
+                              item
+                           ) : (
+                              <DecryptedText
+                                 text={item}
+                                 animateOn="both"
+                                 speed={40}
+                                 maxIterations={6}
+                                 useOriginalCharsOnly
+                              />
+                           )}
                         </li>
                      ))}
                   </ul>
@@ -71,14 +81,17 @@ export function Approach() {
                   </div>
 
                   <p className="text-muted-foreground leading-relaxed">
-                     {/* {t.approach.independentDescription[locale]} */}
-                     <DecryptedText
-                        text={t.approach.independentDescription[locale]}
-                        animateOn="both"
-                        speed={60}
-                        maxIterations={6}
-                        useOriginalCharsOnly
-                     />
+                     {isMobile ? (
+                        t.approach.independentDescription[locale]
+                     ) : (
+                        <DecryptedText
+                           text={t.approach.independentDescription[locale]}
+                           animateOn="both"
+                           speed={40}
+                           maxIterations={6}
+                           useOriginalCharsOnly
+                        />
+                     )}
                   </p>
 
                   <ul className="mt-6 space-y-3">
@@ -88,22 +101,23 @@ export function Approach() {
                            className="flex items-start gap-3 text-sm text-muted-foreground"
                         >
                            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 bg-primary" />
-                           <DecryptedText
-                              text={item}
-                              animateOn="both"
-                              speed={60}
-                              maxIterations={7}
-                              useOriginalCharsOnly
-                           />
+
+                           {isMobile ? (
+                              item
+                           ) : (
+                              <DecryptedText
+                                 text={item}
+                                 animateOn="both"
+                                 speed={40}
+                                 maxIterations={6}
+                                 useOriginalCharsOnly
+                              />
+                           )}
                         </li>
                      ))}
                   </ul>
                </div>
             </div>
-
-            {/* <p className="mt-16 text-center text-lg font-medium text-foreground/80 italic max-w-2xl mx-auto text-balance">
-               {t.approach.quote[locale]}
-            </p> */}
          </div>
       </section>
    )

@@ -1,20 +1,21 @@
 'use client'
 
 import { ArrowDown, Github, Linkedin, Download, ChevronDown } from 'lucide-react'
+import meImage from '@/assets/images/me-cool.webp'
+import TextType from './ui/react-bits/TextType'
+import { useMobile } from '@/hooks/use-mobile'
+import { useI18n } from '@/lib/i18n'
+import Image from 'next/image'
 import {
    DropdownMenu,
    DropdownMenuContent,
    DropdownMenuItem,
    DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import TextType from './ui/react-bits/TextType'
-import { useI18n } from '@/lib/i18n'
-import Image from 'next/image'
-import { useMobile } from '@/hooks/use-mobile'
-import meImage from '@/assets/images/me-cool.webp'
 
 export function Hero() {
    const { locale, t } = useI18n()
+   const isMobile = useMobile()
 
    return (
       <section className="bg-accent relative flex min-h-screen w-full flex-col items-center justify-center px-4 pt-24 pb-20 overflow-hidden">
@@ -28,21 +29,30 @@ export function Hero() {
                   </span>
                </div>
 
-               <h1 className="sr-only">Lautaro Fullone</h1>
-               <TextType
-                  as="h2"
-                  text="Lautaro Fullone"
-                  startOnVisible
-                  loop={false}
-                  showCursor
-                  typingSpeed={50}
-                  pauseDuration={8000}
-                  cursorCharacter="|"
-                  cursorClassName="font-normal"
-                  deletingSpeed={50}
-                  cursorBlinkDuration={0.6}
-                  className="font-sans text-7xl font-bold tracking-tight text-foreground lg:text-8xl text-balance"
-               />
+               {isMobile ? (
+                  <h1 className="font-sans text-7xl font-bold tracking-tight text-foreground lg:text-8xl text-balance">
+                     Lautaro Fullone
+                  </h1>
+               ) : (
+                  <>
+                     <TextType
+                        as="h1"
+                        text="Lautaro Fullone"
+                        startOnVisible
+                        loop={false}
+                        showCursor
+                        typingSpeed={50}
+                        pauseDuration={8000}
+                        cursorCharacter="|"
+                        cursorClassName="font-normal"
+                        deletingSpeed={50}
+                        cursorBlinkDuration={0.6}
+                        className="font-sans text-7xl font-bold tracking-tight text-foreground lg:text-8xl text-balance"
+                     />
+
+                     <h1 className="sr-only">Lautaro Fullone</h1>
+                  </>
+               )}
 
                <p className="mt-4 text-xl font-medium text-primary sm:text-2xl">
                   {t.hero.role[locale]}
