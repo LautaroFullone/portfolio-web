@@ -3,11 +3,13 @@
 import { Send, Github, Linkedin, MapPin, Globe, Mail, Copy } from 'lucide-react'
 import SpotlightCard from './ui/react-bits/SpotlightCard'
 import SectionHeader from './shared/section-header'
+import { sendEmail } from '@/app/actions'
 import { useI18n } from '@/lib/i18n'
 import { useState } from 'react'
 
 export function Contact() {
    const [submitted, setSubmitted] = useState(false)
+   const [isSubmitting, setIsSubmitting] = useState(false)
    const { locale, t } = useI18n()
 
    return (
@@ -112,9 +114,19 @@ export function Contact() {
                      </div>
                   ) : (
                      <form
-                        onSubmit={(e) => {
+                        onSubmit={async (e) => {
                            e.preventDefault()
-                           setSubmitted(true)
+                           setIsSubmitting(true)
+
+                           const formData = new FormData(e.currentTarget)
+                           const result = await sendEmail(formData)
+
+                           setIsSubmitting(false)
+                           if (result.success) {
+                              setSubmitted(true)
+                           } else {
+                              console.error(result.error)
+                           }
                         }}
                         className="flex flex-col gap-6"
                      >
@@ -129,6 +141,7 @@ export function Contact() {
                               </label>
                               <input
                                  id="name"
+                                 name="name"
                                  type="text"
                                  required
                                  className="w-full border-b border-border bg-transparent px-0 py-3 text-base text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary transition-colors"
@@ -144,6 +157,7 @@ export function Contact() {
                               </label>
                               <input
                                  id="company"
+                                 name="company"
                                  type="text"
                                  className="w-full border-b border-border bg-transparent px-0 py-3 text-base text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary transition-colors"
                                  placeholder={t.contact.companyPlaceholder[locale]}
@@ -162,6 +176,7 @@ export function Contact() {
                               </label>
                               <input
                                  id="email"
+                                 name="email"
                                  type="email"
                                  required
                                  className="w-full border-b border-border bg-transparent px-0 py-3 text-base text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary transition-colors"
@@ -177,6 +192,7 @@ export function Contact() {
                               </label>
                               <input
                                  id="subject"
+                                 name="subject"
                                  type="text"
                                  required
                                  className="w-full border-b border-border bg-transparent px-0 py-3 text-base text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary transition-colors"
@@ -195,6 +211,7 @@ export function Contact() {
                            </label>
                            <textarea
                               id="message"
+                              name="message"
                               required
                               rows={5}
                               className="w-full border border-border bg-transparent px-4 py-4 mt-2 text-base text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary transition-colors resize-none"
@@ -204,10 +221,11 @@ export function Contact() {
 
                         <button
                            type="submit"
-                           className="cursor-pointer inline-flex w-full sm:w-fit items-center justify-center gap-3 bg-foreground text-background px-8 py-4 text-sm font-semibold transition-transform hover:scale-[1.02] hover:bg-foreground/90 mt-4"
+                           disabled={isSubmitting}
+                           className="cursor-pointer inline-flex w-full sm:w-fit items-center justify-center gap-3 bg-foreground text-background px-8 py-4 text-sm font-semibold transition-transform hover:scale-[1.02] hover:bg-foreground/90 mt-4 disabled:opacity-70 disabled:cursor-not-allowed"
                         >
-                           {t.contact.sendButton[locale]}
-                           <Send size={16} />
+                           {isSubmitting ? '...' : t.contact.sendButton[locale]}
+                           {!isSubmitting && <Send size={16} />}
                         </button>
                      </form>
                   )}
