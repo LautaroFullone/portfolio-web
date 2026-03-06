@@ -1,10 +1,10 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import Image from 'next/image'
-import { Menu, X, Globe } from 'lucide-react'
-import { useI18n } from '@/lib/i18n'
 import { ThemeSwitcher } from '@/components/theme-switcher'
+import { Menu, X, Globe } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { useI18n } from '@/lib/i18n'
+import Image from 'next/image'
 
 export function Navbar() {
    const [scrolled, setScrolled] = useState(false)
@@ -39,7 +39,7 @@ export function Navbar() {
                className="group flex items-center transition-transform hover:scale-105 active:scale-95"
             >
                <Image
-                  src="/dev-icon.png"
+                  src="/dev-icon.webp"
                   alt="dev.portfolio"
                   width={44}
                   height={44}
