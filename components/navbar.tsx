@@ -14,8 +14,8 @@ export function Navbar() {
    const navLinks = [
       { label: t.nav.approach[locale], href: '#approach' },
       { label: t.nav.technologies[locale], href: '#technologies' },
-      { label: t.nav.projects[locale], href: '#projects' },
       { label: t.nav.experience[locale], href: '#experience' },
+      { label: t.nav.projects[locale], href: '#projects' },
       { label: t.nav.contact[locale], href: '#contact' },
    ]
 

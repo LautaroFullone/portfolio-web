@@ -60,8 +60,8 @@ export default function Home() {
             <Hero />
             <Approach />
             <Technologies />
-            <Projects />
             <Experience />
+            <Projects />
             <Phrase />
             <Contact />
          </main>

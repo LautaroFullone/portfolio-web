@@ -21,7 +21,7 @@ export function Experience() {
    const lineHeight = useTransform(scrollYProgress, [0, 1], ['0%', '100%'])
 
    return (
-      <section id="experience" className="px-6 py-28 lg:py-36 bg-muted">
+      <section id="experience" className="px-6 py-28 lg:py-36">
          <div className="mx-auto max-w-6xl">
             <SectionHeader
                label={t.experience.label[locale]}

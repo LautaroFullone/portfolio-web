@@ -14,7 +14,7 @@ export function Projects() {
    const isMobile = useMobile()
 
    return (
-      <section id="projects" className="px-6 py-28 lg:py-36">
+      <section id="projects" className="px-6 py-28 lg:py-36 bg-muted">
          <div className="mx-auto max-w-6xl">
             <SectionHeader
                label={t.projects.label[locale]}
@@ -43,7 +43,7 @@ export function Projects() {
                               href={url}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex flex-col md:flex-row bg-accent group border border-border min-h-[300px] md:min-h-[380px] cursor-pointer"
+                              className="flex flex-col md:flex-row group border border-border min-h-[300px] md:min-h-[380px] cursor-pointer bg-background"
                            >
                               {/* Image Container */}
                               <div
